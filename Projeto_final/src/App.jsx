@@ -1,11 +1,10 @@
-
-import './App.css'
+import Longinpage from "./Login/Loginpage"
 
 function App() {
 
   return (
     <>
-    
+      <Longinpage/>
     </>
   )
 }
