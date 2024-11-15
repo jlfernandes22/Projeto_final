@@ -1,4 +1,15 @@
-.login_page .login_buttons .login {
+.login_page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
+.login_page .login_buttons .login {              
     border: none;
     border-radius: 20px;
     font-size: larger;
@@ -26,7 +37,7 @@
 .login_page .login_buttons .sign_up {
     border: none;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: larger;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     padding: 2px;
@@ -34,6 +45,7 @@
     width: 250px;
     height: 35px;
     text-align: center;
+    display: block;
     cursor: pointer;
     position: fixed;
     top: 50%;
@@ -53,7 +65,7 @@
     font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 2px;
     margin: 5px;
     text-align: center;
@@ -69,7 +81,7 @@
     font-size: 30px;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 2px;
     margin: 5px;
     text-align: center;
@@ -78,24 +90,3 @@
     top: 39%;
     left: 60%;
 }
-
-.login_page .login_buttons {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    padding-top: 20px;
-    right: 0;
-    background-color: black;
-}
-
-.login_page .logo {
-    height: 100%;
-    width: 100%;
-    position: flex;
-    top: 0;
-    left: 0;
-    background-color: black;
-}
-
-
