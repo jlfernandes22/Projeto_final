@@ -17,11 +17,11 @@ function SignInForm({ toggle }) {
                 <h1 className='sign_in_heading'>Sign In</h1>
 
                 <label className='username_label'>Username</label>
-                <input type="text" placeholder="   Enter your username" value={username} className="username" onChange={e => setUsername(e.target.value)} required
+                <input type="text" placeholder="Enter your username" value={username} className="username" onChange={e => setUsername(e.target.value)} required
                 />
 
                 <label className='password_label'>Password</label>
-                <input type="password" placeholder="   Enter your password" value={password} className="password" onChange={e => setPassword(e.target.value)} required />
+                <input type="password" placeholder="Enter your password" value={password} className="password" onChange={e => setPassword(e.target.value)} required />
 
                 <div className="Buttons">
                     <button onClick={toggle} className="cancel">Cancel</button>

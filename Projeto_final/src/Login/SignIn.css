@@ -56,13 +56,15 @@
 .form .username{
     border: none;
     border-radius: 10px;
-
+    padding: 5px;
+    text-align: center;
 }
 
 .form .password{
     border: none;
     border-radius: 10px;
-    
+    padding: 5px;
+    text-align: center;
 }
 
 .form .Buttons{
