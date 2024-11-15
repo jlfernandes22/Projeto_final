@@ -1,13 +1,35 @@
 import './loginpage.css';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import SignInForm from './SignInForm.jsx';
 
 function Loginpage() {
     const [formToShow, setFormToShow] = useState(null);
+    const [imageBase64, setImageBase64] = useState(null);
+
 
     function togglePop(formType) {
         setFormToShow(formToShow === formType ? null : formType);
     }
+
+    useEffect(() => {
+        const url = 'https://api.sheety.co/ea4d203b7fab3b8dc5ca6598ef64557a/signupForm/imagens'
+
+        fetch(url)
+            .then((response) => response.json())
+            .then(json => {
+                const imagens = json.imagens;
+                const firstImage = imagens[0];
+                const imagem = firstImage.base64;
+                setImageBase64(imagem);
+            })
+            .catch((error) => {
+                console.error("Error fetching image:", error);
+            });
+
+    }, []);
+
+
+
 
     return (
         <div className="login_page">
@@ -20,7 +42,7 @@ function Loginpage() {
 
             </div>
             <div className="logo">
-                <img src="logo.png" alt="logo" />
+                <img className='logo_img' src={`data:image/png;base64,${imageBase64}`} alt="logo" />
             </div>
         </div>
     );
