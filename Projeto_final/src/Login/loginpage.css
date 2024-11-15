@@ -1,0 +1,101 @@
+.login_page .login_buttons .login {
+    border: none;
+    border-radius: 20px;
+    font-size: larger;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 2px;
+    margin: 5px;
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    top: 45%;
+    background-color: aliceblue;
+    transition-duration: 0.4s;
+    left: 60%;
+}
+
+.login_page .login_buttons .login:hover{
+
+    background-color: rgba(240, 248, 255, 0.76);
+}
+
+.login_page .login_buttons .sign_up {
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding: 2px;
+    margin: 5px;
+    width: 250px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    position: fixed;
+    top: 50%;
+    background-color: aliceblue;
+    transition-duration: 0.4s;
+    left: 60%;
+}
+
+.login_page .login_buttons .sign_up:hover{
+
+    background-color: rgba(240, 248, 255, 0.76);
+}
+
+.login_page .login_buttons .heading_1 {
+    border: none;
+    border-radius: 20px;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+    text-align: center;
+    cursor: default;
+    position: fixed;
+    top: 30%;
+    left: 60%;
+}
+
+.login_page .login_buttons .heading_2 {
+    border: none;
+    border-radius: 20px;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    padding: 2px;
+    margin: 5px;
+    text-align: center;
+    cursor: default;
+    position: fixed;
+    top: 39%;
+    left: 60%;
+}
+
+.login_page .login_buttons {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding-top: 20px;
+    right: 0;
+    background-color: black;
+}
+
+.login_page .logo {
+    height: 100%;
+    width: 100%;
+    position: flex;
+    top: 0;
+    left: 0;
+    background-color: black;
+}
+
+
