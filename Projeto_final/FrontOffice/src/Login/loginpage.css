@@ -45,7 +45,7 @@
     display: block;
     text-align: center;
     font-size: larger;
-    
+
     font-weight: bold;
     border: none;
     border-radius: 20px;
@@ -68,7 +68,7 @@
     display: block;
     text-align: center;
     font-size: larger;
-    
+
     font-weight: bold;
     border: none;
     border-radius: 20px;
@@ -89,7 +89,7 @@
 .login_page .login_buttons .heading_1 {
 
     font-size: 50px;
-    
+
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin-top: 30vh;
@@ -104,7 +104,7 @@
 
     border: none;
     font-size: 30px;
-    
+
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin-bottom: 0;
