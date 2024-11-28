@@ -1,0 +1,204 @@
+.teste {
+    /*o form*/
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(27, 29, 31, 0.705);
+    backdrop-filter: blur(5px);
+    transition-duration: 0.5s;
+    z-index: +1;
+}
+
+
+.form {
+    /*div SignUp e SignIn*/
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20vh;
+    min-width: 400px;
+    max-width: 20vw;
+    min-height: 350px;
+    max-height: 40vh;
+    border-radius: 10%;
+    background-color: rgb(0, 0, 0);
+    transition-duration: 0.2s;
+}
+
+.form .sign_in_heading {
+    /*Header SignIn*/
+    padding-top: 4vh;
+    font-size: 50px;
+
+    font-weight: bold;
+    color: white;
+}
+
+.form .sign_up_heading {
+    /*Header SignUp*/
+    padding-top: 4vh;
+    font-size: 50px;
+
+    font-weight: bold;
+    color: white;
+
+}
+
+
+
+.form .username_label {
+    /*label do username*/
+    display: block;
+    font-size: 20px;
+
+    font-weight: bold;
+    color: white;
+}
+
+.form .password_label {
+    /*label da password do SignIn.jsx*/
+    display: block;
+    margin-top: 6%;
+    font-size: 20px;
+
+    font-weight: bold;
+    color: white;
+}
+
+.form .password_label_signUp {
+    /*label da password do SignUp.jsx*/
+    display: block;
+    margin-top: 2%;
+    font-size: 20px;
+
+    font-weight: bold;
+    color: white;
+}
+
+.form .username_signin {
+    /*caixa username no SignIn.jsx*/
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form .username {
+    /*caixa do username do SignUp.jsx*/
+    display: block;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.form .password {
+    /*caixa da password*/
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    text-align: center;
+}
+
+.form .Buttons {
+    /*Caixa dos botões*/
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.form .Buttons .cancel {
+    /*Botão cancel*/
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    background-color: aliceblue;
+    transition-duration: 0.5s;
+}
+
+.form .Buttons .sign_In_create {
+    /*Botão signIn*/
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+
+    font-weight: bold;
+    text-align: center;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: aliceblue;
+    transition-duration: 0.5s;
+}
+
+.form .Buttons .sign_In_create:hover {
+    background-color: rgb(122, 255, 140);
+}
+
+.form .Buttons .sign_Up_create {
+    /*Botão signUp*/
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 20px;
+
+    font-weight: bold;
+    text-align: center;
+    margin-left: 20px;
+    cursor: pointer;
+    background-color: aliceblue;
+    transition-duration: 0.5s;
+}
+
+.form .Buttons .sign_Up_create:hover {
+    background-color: rgb(122, 255, 140);
+}
+
+.form .Buttons .cancel:hover {
+    background-color: rgb(255, 80, 80);
+}
+
+.form .wrong_password {
+    /*for display when password is wrong (not yet implemented)*/
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 15px;
+
+    font-weight: bold;
+    color: rgb(255, 80, 80);
+}
+
+.form .no_account {
+    /*for display when the account does not exist (not yet implemented)*/
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 0;
+    font-size: 15px;
+
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.errorMessage {
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 930px) {}
