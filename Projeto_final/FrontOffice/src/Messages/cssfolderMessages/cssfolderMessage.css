@@ -1,0 +1,79 @@
+.containerMessage{
+    background-color: aquamarine;
+    width: 65vw;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    border: 2px solid lightgrey;
+    border-radius: 30px;
+    box-shadow: 1px 2px 5px black;
+
+}
+.containerMessage ul{
+    padding: 0;
+}
+.containerMessage li{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    border-bottom: 5px solid lightgrey;
+    margin: auto;
+    justify-content: space-between;
+    width: 75%;
+    
+}
+.containerMessage span{
+    display: inline-block;
+    width: 10vw;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    padding-left: 10px;
+    font-size: 2.5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: default;
+    margin-right: 8vw;
+}
+.containerMessage li .profile{
+    width: 100%;
+    height: 20vh;
+    max-height: 75px;
+    max-width: 75px;
+    object-fit: cover;
+    border-radius: 50%; 
+    border: 2px solid darkgray;
+    cursor: pointer;
+}
+li .arrow{
+    max-width: 25px;
+    max-height: 25px;
+    object-fit: cover;
+    margin-left: 10vw;
+    cursor: pointer;
+}
+.listadeAmigos{
+    display: inline-block;
+    max-width: 40vw;
+    margin: auto;
+    font-size: 5vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 1px 2px 5px black;
+    cursor: default;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    margin-left: 10vw;
+}
+.goToFeed{
+    display: inline-block;
+    max-width: 10vw;
+    margin-right: 0;
+    cursor: pointer;
+}
+.containerForTitle{
+    display: flex;
+}
