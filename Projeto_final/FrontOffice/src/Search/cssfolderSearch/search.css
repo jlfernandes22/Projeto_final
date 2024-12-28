@@ -1,0 +1,17 @@
+.containerSearch{
+    margin-top: 10px;
+    text-align: center;
+    background-color: lightblue;
+    width: 60vw;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.containerSearch img{
+    
+    max-width: 10vw;
+}
+.containerSearch .searchAccount{
+    max-width: 20vw;
+    width: 20vw;
+}
