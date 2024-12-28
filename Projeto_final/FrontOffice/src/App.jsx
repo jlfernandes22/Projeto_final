@@ -1,12 +1,14 @@
-import Longinpage from "./Login/Loginpage"
+import DefaultMain from "./DefaultMain"
+import { NavigationProvider } from "./NavigationContext"
 
 function App() {
 
+  
   return (
-    <>
-      <Longinpage/>
-    </>
-  )
+      <NavigationProvider>
+        <DefaultMain />
+      </NavigationProvider>
+  );
 }
 
 export default App
