@@ -5,7 +5,8 @@ import React, { useState, useEffect } from 'react';
 function SignUpForm({ toggle }) {
     const [newname, setNewName] = useState('');
     const [newpass, setNewPass] = useState('');
-    const [errorMessage,setErrorMessage] = useState('');        
+    const [errorMessage,setErrorMessage] = useState(''); 
+    const [creationMessage, setCreationMessage] = useState('');       
 
     function login(newname, newpass) {
         // Your JSON data
@@ -34,6 +35,10 @@ function SignUpForm({ toggle }) {
                 // Handle the JSON data
                 if(data.error){
                     setErrorMessage(data.error)
+                    setCreationMessage("");
+                }else{
+                    setErrorMessage("");
+                    setCreationMessage("Conta Criada!");
                 }
             })
             .catch(error => {
@@ -61,6 +66,7 @@ function SignUpForm({ toggle }) {
                 <input type='password' placeholder='Enter your password' value={newpass} className='password' onChange={e => setNewPass(e.target.value)} required />
                 <div className="errorMessage">{errorMessage}</div>
 
+                <div className="errorMessage">{creationMessage}</div>
 
                 <div className='Buttons'>
                     <button type='Button' onClick={toggle} className='cancel'>Cancel</button>
