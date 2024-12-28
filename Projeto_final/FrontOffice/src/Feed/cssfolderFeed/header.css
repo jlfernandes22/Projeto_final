@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    background-color: aquamarine;
+    border-radius: 30px;
+    max-width: 700px;
+    max-height: 25vh;
+    margin: auto;
+    margin-top: 10px;
+    border: 5px solid black
+}
+
+.header .profile {
+    max-height: 18vh;
+    max-width: 20vw;
+    margin: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.header .message {
+    max-height: 50px;
+    max-width: 100px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.header .logout{
+    max-height: 50px;
+    max-width: 100px;
+    margin-top: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.header .welcome{
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.5em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+@media only screen and (max-width: 930px) {}
