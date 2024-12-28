@@ -1,14 +1,14 @@
 import './SignIn.css';
 import React, { useState, useEffect } from 'react';
-import Users from '../../../BackOffice/Users'
-import axios from "axios";
-import { useFormState } from 'react-dom';
+import { useNavigation } from '../NavigationContext';
+
 
 function SignInForm({ toggle }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorMessage,setErrorMessage] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
+    const { navigate } = useNavigation();
 
 
     function login(username, password) {
@@ -36,45 +36,55 @@ function SignInForm({ toggle }) {
             })
             .then(data => {
                 // Handle the JSON data
-                if(data.error){
+                
+                if (data.error) {
                     setErrorMessage(data.error)
-                }                    
+                } else {
+                    handleGoToFeed(data.user.name)
+                }
             })
             .catch(error => {
-                
+
                 console.error('Fetch error:', error);
             });
     }
-
-
+    function handleGoToFeed() {
+        navigate('feed');
+        localStorage.setItem("username", username);
+        window.location.reload();
+        console.log(username);
+    }
+    
 
     return (
-        <form className='teste'
-            onSubmit={(e) => {
-                e.preventDefault(); // Prevent default form submission
-                login(username, password); // Call the login function with the current username and password
-            }}>
-            <div className='form'>
-                <h1 className='sign_in_heading'>Sign In</h1>
+            <form className='teste'
+                onSubmit={(e) => {
+                    e.preventDefault(); // Prevent default form submission
+                    login(username, password); // Call the login function with the current username and password
+                }}>
+                <div className='form'>
+                    <h1 className='sign_in_heading'>Sign In</h1>
 
-                <label className='username_label'>Username</label>
-                <input type='text' placeholder='Enter your username' value={username} className='username_signin' onChange={e => setUsername(e.target.value)} required/>
-               
-                <label className='no_account'>Account does not exist</label>
+                    <label className='username_label'>Username</label>
+                    <input type='text' placeholder='Enter your username' value={username} className='username_signin' onChange={e => setUsername(e.target.value)} required />
 
-                <label className='password_label'>Password</label>
-                <input type='password' placeholder='Enter your password' value={password} className='password' onChange={e => setPassword(e.target.value)} required />
-                
-                <label className='wrong_password'>Wrong Password</label>
-                <div className="errorMessage">{errorMessage}</div>
 
-                <div className='Buttons'>
-                    <button type='Button' onClick={toggle} className='cancel'>Cancel</button>
-                    <button type='submit' className='sign_In_create'>Sign In</button>
+                    <label className='password_label'>Password</label>
+                    <input type='password' placeholder='Enter your password' value={password} className='password' onChange={e => setPassword(e.target.value)} required />
+
+
+                    <div className="errorMessage">{errorMessage}</div>
+
+                    <div className='Buttons'>
+                        <button type='Button' onClick={toggle} className='cancel'>Cancel</button>
+                        <button type='submit' className='sign_In_create'>Sign In</button>
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
     );
+}
+export function getUsername(){
+    return username;
 }
 
 export default SignInForm;
