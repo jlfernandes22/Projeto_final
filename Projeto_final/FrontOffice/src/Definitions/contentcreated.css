@@ -1,0 +1,21 @@
+.postImg{
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border: 1.5px solid black;
+}
+.postMessage{
+    font-size: 20px;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+.contentList{
+    border: 5px solid black;
+    background-color: grey;
+}
+.contentList li{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 5px;
+}
