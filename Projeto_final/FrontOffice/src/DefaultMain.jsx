@@ -6,7 +6,7 @@ import SpecificMessage from "./Messages/SpecificMessage";
 import Search from "./Search/Search";
 import Content from "./Content/Content";
 import Loginpage from "./Login/Loginpage";
-import { useState } from "react";
+import EditProfile from "./Definitions/EditProfile";
 
 function DefaultMain() {
 
@@ -23,6 +23,7 @@ function DefaultMain() {
                 {page === "specificmessage" && <SpecificMessage />}
                 {page === "search" && <Search />}
                 {page === "addcontent" && <Content />}
+                {page === "editprofile" && <EditProfile/>}
             </>
     );
 }
