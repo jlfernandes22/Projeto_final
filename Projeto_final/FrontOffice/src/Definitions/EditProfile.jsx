@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from "react";
 import { useNavigation } from "../NavigationContext";
+import "./editprofile.css"
 
 function EditProfile(){
 
-    const { username } = useNavigation()
+    const { username, changeUsername} = useNavigation()
 
     useEffect(() => {
            
@@ -11,7 +12,9 @@ function EditProfile(){
 
     return(
         <div className="container">
-            <p>Alterar o Nome</p>
+            <p>Alterar Nome</p>
+            <input type="text" name="" id="" />
+            <button>Alterar</button>
         </div>
     );
 }
