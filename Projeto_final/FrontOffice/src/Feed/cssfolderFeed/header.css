@@ -31,12 +31,15 @@
     margin-right: 10px;
     cursor: pointer;
 }
-.header .welcome{
+.header .welcomeMessage{
     align-self: center;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: bold;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 @media only screen and (max-width: 930px) {}
