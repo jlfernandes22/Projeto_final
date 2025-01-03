@@ -1,5 +1,4 @@
-.containerSearch{
-    margin-top: 10px;
+.containerSearch {
     text-align: center;
     background-color: lightblue;
     width: 60vw;
@@ -7,11 +6,33 @@
     border: 3px solid black;
     border-radius: 10px;
 }
-.containerSearch img{
-    
-    max-width: 10vw;
+
+.containerSearch img {
+    max-width: 75px;
+    cursor: pointer;
 }
-.containerSearch .searchAccount{
+
+.containerSearch .searchAccount {
     max-width: 20vw;
     width: 20vw;
+}
+
+.containerSearch ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerSearch li {
+    float: left;
+}
+.containerSearch p{
+    font-size: 25px;
+}
+.containerSearch .pesquisa{
+    display: none;
 }
