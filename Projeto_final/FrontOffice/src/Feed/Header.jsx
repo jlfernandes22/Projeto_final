@@ -25,7 +25,7 @@ function Header() {
                     navigate("profile")
                     window.location.reload()}} 
                     src={profile} alt="Profile" title="Profile"/>
-                <span className="welcome" ref={profileName}>Welcome!</span>
+                <span className="welcomeMessage" ref={profileName}>Welcome!</span>
                 <img className="message" onClick={() => {
                     navigate("messages")
                     window.location.reload()}} 
