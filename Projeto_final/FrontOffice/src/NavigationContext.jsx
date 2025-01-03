@@ -9,9 +9,14 @@ export function NavigationProvider({children}){
         setPage(newPage);
         localStorage.setItem("currentPage", newPage)}
     
-    const username = localStorage.getItem("username") || '';
+    const [username,setUsername] = useState(() => {
+        return localStorage.getItem("username") || ''})
+    const changeUsername = (newUsername) => {
+        setUsername(newUsername);
+        localStorage.setItem("username",newUsername);
+    }
     return(
-        <NavigationContext.Provider value={{page, navigate, username}}>
+        <NavigationContext.Provider value={{page, navigate, username, changeUsername}}>
             {children}
         </NavigationContext.Provider>
     );
