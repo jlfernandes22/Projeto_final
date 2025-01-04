@@ -30,17 +30,19 @@ function Search() {
 
         fetch('http://localhost/restapi/users.php', options)
             .then(response => {
+                
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 return response.json();
             })
             .then(data => {
+
                 if(data.error){
                     setError(data.error)
                 }else{
                     setError("");
-                    console.log(data);
+                    
                     setUsers(data);
                 }
             })
@@ -55,7 +57,7 @@ function Search() {
             
             if(users[i].name == user){
                 console.log(users[i].name)
-                console.log(user);
+                console.log(users);
                 imgResultado.current.style.display = "block"
                 userAlvo.current.style.display = "block"
                 resultado.current.textContent = `${users[i].name}`;

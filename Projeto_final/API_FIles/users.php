@@ -50,7 +50,7 @@ function handleGet($pdo, $input)
 {
     if (!isset($input['id'])) {
         // Select both id and name from users
-        $sql = "SELECT id, name FROM users";
+        $sql = "SELECT id, name,profile_picture FROM users";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     } else {
