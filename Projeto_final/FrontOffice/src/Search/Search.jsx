@@ -105,6 +105,7 @@ function Search() {
             <div className="pesquisa" ref={userAlvo}>
                 <img ref={imgResultado} className="profileImage" src={imgProfile} alt="" />
                 <p className="pesquisaResultado" ref={resultado}></p>
+                <button>Seguir</button>
             </div>
         </div>
     );
