@@ -39,7 +39,7 @@
 4. **Run the Application**:
    - Start the server:
      ```bash
-     npm start
+     npm run dev
      ```
    - Open your browser and go to `http://localhost:3000` to access the app.
 
@@ -48,7 +48,7 @@
 ![What'sUP Screenshot](screenshot.png)
 
 ## MySQL
-
+![MYphpadminScreenshot](SqlCodesInput.png)
 ```bash
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
