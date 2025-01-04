@@ -7,7 +7,18 @@ import searchImg from "./ImgSearch/search.png"
 
 function Search() {
 
+    const {navigate} = useNavigation();
 
+    const userAlvo = useRef(null);
+
+
+
+    function searchUser() {
+        if (userAlvo != null) {
+            userAlvo.current.style.display = "block";
+
+        }
+    }
 
     return (
         <div className="containerSearch">
@@ -19,10 +30,10 @@ function Search() {
                 <li><p>Pesquise</p>
                     <input type="text" name="" id="" />
                 </li>
-                <li><img src={searchImg} alt="" /></li>
+                <li><img src={searchImg} onClick={searchUser} alt="" /></li>
             </ul>
-            <div className="pesquisa" >
-                
+            <div className="pesquisa" ref={userAlvo}>
+                <p>ola</p>
             </div>
         </div>
     );

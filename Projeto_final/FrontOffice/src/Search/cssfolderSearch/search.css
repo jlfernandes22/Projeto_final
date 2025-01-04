@@ -35,4 +35,5 @@
 }
 .containerSearch .pesquisa{
     display: none;
+    border-top: 3px solid black;
 }
