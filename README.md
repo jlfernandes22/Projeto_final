@@ -45,12 +45,22 @@
 
 ## Demo
 
+![What'sUPScreenshot](Images/screenshot.png)
+
+## MySQL
+![MYphpadminScreenshot](Images/XampControlPanel.png)
+- Click the button admin next to MySQL
+![MYphpadminScreenshot](Images/CreateDataBase.png)
+- Just create the data base with the name "users"
+![MYphpadminScreenshot](Images/SqlCodesInput.png)
+=======
 ![What'sUP Screenshot](screenshot.png)
 
 ## MySQL
 ![MYphpadminScreenshot](CreateDataBase.png)
 - Just create the data base with the name "users"
 ![MYphpadminScreenshot](SqlCodesInput.png)
+
 - Having the new DataBase selected just paste all the code below and press "GO"
 ```bash
 CREATE TABLE users (
@@ -88,3 +98,4 @@ CREATE TABLE followers (
 
 ```
 ## API Files
+
