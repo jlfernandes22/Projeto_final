@@ -1,0 +1,53 @@
+.containerSearch {
+    text-align: center;
+    background-color: lightblue;
+    width: 60vw;
+    margin: auto;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.containerSearch img {
+    max-width: 75px;
+    cursor: pointer;
+}
+
+.containerSearch .searchAccount {
+    max-width: 20vw;
+    width: 20vw;
+}
+
+.containerSearch ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerSearch li {
+    float: left;
+}
+.containerSearch p{
+    font-size: 25px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 5px;
+}
+.containerSearch .pesquisa{
+    text-align: center;
+    display: none;
+    padding: 25px;
+    border-top: 3px solid black;
+}
+.containerSearch .pesquisaResultado{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    width: 50%;
+    margin: auto;
+}
+.containerSearch .submitUser{
+    font-size: 1em;
+}

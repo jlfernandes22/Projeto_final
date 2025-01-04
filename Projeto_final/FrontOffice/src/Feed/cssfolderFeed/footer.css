@@ -1,0 +1,41 @@
+.footer{
+    background-color: aquamarine;
+    border-radius: 30px;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    max-width: 700px;
+    max-height: 25vh;
+    margin: auto;
+    left: 0;
+    right: 0;
+    border: 5px solid black;
+    padding: 5px;
+}
+.footer .mainMenu{
+    position: relative;
+    max-height: 70px;
+    max-width: 100px;
+    left: 0;
+    margin-left: auto;
+    cursor: pointer;
+}
+.footer .addContent{
+    position: absolute;
+    max-height: 70px;
+    max-width: 100px;
+    margin: auto;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+}
+.footer .search{
+    position: absolute;
+    max-height: 70px;
+    max-width: 100px;
+    margin-left: auto;
+    margin-right: 10px;
+    right: 0;
+    cursor: pointer;
+}
+@media only screen and (max-width: 930px) {}
