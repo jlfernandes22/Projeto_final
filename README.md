@@ -20,7 +20,7 @@
    - Navigate to your XAMPP installation and delete what's inside the "htdocs" folder and create a folder inside called "restapi" after that paste the [API](#api-files) files inside that new folder
      
 2. **Set Up MySQL Database**:
-   - [MySQLTables](#mysql-tables)
+   - [MySQL](#mysql)
    
 3. **Install Dependencies**:
    - Clone the repository:
@@ -47,7 +47,7 @@
 
 ![What'sUP Screenshot](screenshot.png)
 
-## MySQL Tables
+## MySQL
 
 ```bash
 CREATE TABLE users (
