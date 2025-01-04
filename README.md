@@ -31,6 +31,9 @@
      ```bash
      cd Projeto_final
      ```
+     ```bash
+     cd FrontOffice
+     ```
    - Install Node.js dependencies:
      ```bash
      npm install
