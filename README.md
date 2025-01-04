@@ -45,7 +45,7 @@
 
 ## Demo
 
-![What'sUP Screenshot](Images/screenshot.png)
+![What'sUPScreenshot](Images/screenshot.png)
 
 ## MySQL
 ![MYphpadminScreenshot](Images/CreateDataBase.png)
