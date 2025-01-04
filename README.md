@@ -94,5 +94,5 @@ CREATE TABLE followers (
 
 ```
 ## API Files
-[users.php](Projeto_final/API_Files/users.php)
-[db.php](Projeto_final/API_Files/db.php)
+[users.php](Projeto_final/API_FIles/users.php)
+[db.php](Projeto_final/API_FIles/db.php)
