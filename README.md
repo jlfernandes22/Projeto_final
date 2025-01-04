@@ -53,8 +53,6 @@
 ![MYphpadminScreenshot](Images/CreateDataBase.png)
 - Just create the data base with the name "users"
 ![MYphpadminScreenshot](Images/SqlCodesInput.png)
-=======
-![What'sUP Screenshot](screenshot.png)
 
 ## MySQL
 ![MYphpadminScreenshot](CreateDataBase.png)
