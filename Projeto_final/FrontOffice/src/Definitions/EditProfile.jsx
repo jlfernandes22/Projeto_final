@@ -11,7 +11,7 @@ function EditProfile(){
         }, [username])
 
     return(
-        <div className="container">
+        <div className="containerEditProfile">
             <p>Alterar Nome</p>
             <input type="text" name="" id="" />
             <button>Alterar</button>

@@ -21,21 +21,15 @@ function Message() {
                 navigate('feed')
                 window.location.reload()
             }} src={goToFeed} alt="" />
-            <p className="listadeAmigos" onClick={() => {
-                    navigate("profile")
-                    window.location.reload()}}>Lista de Amigos</p>
+            <p className="listadeAmigos">Lista de Amigos</p>
             </div>
             <ul>
                 
                 {friends.map((friend, index) => <li key={index}>
-                    <img src={friend} onClick={() => {
-                        navigate("profile")
-                        window.location.reload()}} className="profile" alt={`User ${index}`} /><span>
+                    <img src={friend} className="profile" alt={`User ${index}`} /><span>
                         Usuiasjdiasjdia {index}
                     </span>
-                    <img className="arrow" onClick={() => {
-                        navigate("specificmessage")
-                        window.location.reload()}} src={arrowMessage} alt="" />
+                    <img className="arrow" src={arrowMessage} alt="" />
                     </li>)}
             </ul>
         </div>

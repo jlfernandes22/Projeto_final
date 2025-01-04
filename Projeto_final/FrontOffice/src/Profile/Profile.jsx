@@ -27,12 +27,15 @@ function Profile() {
     function escolha() {
         if (buttonView === "EditarPerfil") {
             escolhaDiv.current.style.visibility = "visible"
+            escolhaDiv.current.style.width = "250px"
             return <EditProfile />
         } else if (buttonView === "Amigos") {
             escolhaDiv.current.style.visibility = "visible"
+            escolhaDiv.current.style.width = "250px"
             return <FriendList />
         } else if (buttonView === "Publicacoes") {
             escolhaDiv.current.style.visibility = "visible"
+            escolhaDiv.current.style.width = "500px"
             return <ContentCreated />
         } else {
 
@@ -59,10 +62,10 @@ function Profile() {
                     <li><button onClick={() => {
                     setButtonView("Publicacoes")
                 }}>Publicações</button></li>
-                    <li><div className="escolha" ref={escolhaDiv}>
-                    {escolha()}
-                </div></li>
                 </ul>
+            </div>
+            <div className="escolhaCerta" ref={escolhaDiv}>
+                    {escolha()}
             </div>
 
         </div>

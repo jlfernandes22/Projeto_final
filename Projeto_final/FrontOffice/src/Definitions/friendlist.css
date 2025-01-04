@@ -11,11 +11,10 @@
     overflow-wrap: break-word;
 }
 .friendList{
-    border: 5px solid black;
+    list-style: none;
     background-color: grey;
 }
 .friendList li{
-    border-top: 2px solid black;
-    border-bottom: 2px solid black;
+
     padding: 5px;
 }
