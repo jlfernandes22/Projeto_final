@@ -1,0 +1,50 @@
+.containerContent{
+    margin: auto;
+    background-color: lightgrey;
+    max-width: 65vw;
+    text-align: center;
+    margin-top: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    height: 100vh;
+}
+.submitText{
+    flex: 1;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 5px;
+    font-size: 1em;
+    height: 50vh;
+    width: 35vw;
+    resize: none;
+}
+.containerContent .imgLoaded{
+    max-height: 250px;
+    max-width: 250px;
+    object-fit: cover;
+}
+
+.contentWrapper{
+    display: flex;
+    align-items: flex-start; 
+    gap: 10px;
+    width: 100%;
+}
+.imgPreview{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+}
+.imgPreview.hasImage{
+    border: none;
+    background-color: transparent;
+}
+.placeholderText{
+    font: 1em;
+    text-align: center;
+}
