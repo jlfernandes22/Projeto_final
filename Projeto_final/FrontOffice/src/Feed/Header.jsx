@@ -4,17 +4,17 @@ import message from './Header/comment.png';
 import logout from './Header/exit_logout.png';
 import "./cssfolderFeed/header.css"
 import { useNavigation } from "../NavigationContext";
-import { getUsername } from "../Login/SignInForm";
 
 function Header() {
 
     const profileName = useRef();
-    const {navigate, username} = useNavigation();
+    const {navigate, username, user_id} = useNavigation();
 
     useEffect(() => {
         if(profileName.current != null){
             profileName.current.textContent = `Welcome ${username}!`;
         }
+        console.log(user_id);
     }, [username])
 
     return (

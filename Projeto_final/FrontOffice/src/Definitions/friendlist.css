@@ -3,18 +3,19 @@
     height: 50px;
     border-radius: 100px;
     border: 1.5px solid black;
+    cursor: pointer;
 }
 .friendName{
     font-size: 20px;
     word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word;
+    cursor: pointer;
 }
 .friendList{
     list-style: none;
     background-color: grey;
 }
 .friendList li{
-
     padding: 5px;
 }
