@@ -48,7 +48,10 @@
 ![What'sUP Screenshot](screenshot.png)
 
 ## MySQL
+![MYphpadminScreenshot](CreateDataBase.png)
+- Just create the data base with the name "users"
 ![MYphpadminScreenshot](SqlCodesInput.png)
+- Just paste all the code below and press "GO"
 ```bash
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
