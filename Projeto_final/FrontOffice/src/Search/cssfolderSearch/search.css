@@ -1,5 +1,4 @@
 .containerSearch {
-    text-align: center;
     background-color: lightblue;
     width: 60vw;
     margin: auto;
@@ -8,7 +7,7 @@
     margin-top: 10px;
 }
 
-.containerSearch img {
+.containerSearch .defaultImg{
     max-width: 75px;
     cursor: pointer;
 }
@@ -37,17 +36,26 @@
     margin: 5px;
 }
 .containerSearch .pesquisa{
-    text-align: center;
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
     padding: 25px;
     border-top: 3px solid black;
 }
 .containerSearch .pesquisaResultado{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
-    width: 50%;
-    margin: auto;
 }
+
+
 .containerSearch .submitUser{
     font-size: 1em;
+}
+.profileImage{
+    display: block;
+    width: 50px;
+    border: 2px solid black;
+    border-radius: 100px;
+    margin-bottom: 10px;
 }

@@ -3,12 +3,14 @@ import { useNavigation } from "../NavigationContext";
 import "./cssfolderSearch/search.css";
 import backMenu from "./ImgSearch/dashboard.png";
 import searchImg from "./ImgSearch/search.png";
+import profileDefault from "./ImgSearch/anonymity.png"
 
 function Search() {
     const { navigate } = useNavigation();
     const userAlvo = useRef(null); 
     const resultado = useRef(null);
     const imgResultado = useRef(null);
+    const [imgProfile, setImgProfile] = useState(null);
     const [users, setUsers] = useState([]); 
     const [searchInput, setSearchInput] = useState(''); 
     const [error, setError] = useState(''); 
@@ -54,8 +56,14 @@ function Search() {
             if(users[i].name == user){
                 console.log(users[i].name)
                 console.log(user);
+                imgResultado.current.style.display = "block"
                 userAlvo.current.style.display = "block"
                 resultado.current.textContent = `${users[i].name}`;
+                if(users[i].profile_picture == null){
+                    setImgProfile(profileDefault);
+                }else{
+                    setImgProfile(users[i].profile_picture);
+                }
                 break;
             }
             userAlvo.current.style.display = "block"
@@ -73,7 +81,7 @@ function Search() {
                         onClick={() => {
                             navigate("feed");
                             window.location.reload();
-                        }}
+                        }} className="defaultImg"
                         alt=""
                     />
                 </li>
@@ -89,12 +97,12 @@ function Search() {
                 <li>
                     <img src={searchImg} onClick={() => {
                         searchUser(searchInput);
-                    }} alt="Search" />
+                    }} alt="Search" className="defaultImg"/>
                 </li>
             </ul>
             <div className="pesquisa" ref={userAlvo}>
-                <img ref={imgResultado} src="" alt="" />
-                <p className="pesquisaResultado" ref={resultado}>ola</p>
+                <img ref={imgResultado} className="profileImage" src={imgProfile} alt="" />
+                <p className="pesquisaResultado" ref={resultado}></p>
             </div>
         </div>
     );
