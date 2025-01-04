@@ -1,6 +1,6 @@
 # What'sUP
 
-**What'sUP** is a social media web application, similar to platforms like Instagram or X, where users can create accounts, log in, and interact with others. The application allows users to share posts, view content, and manage their profiles.
+**What'sUP** is a social media web application, similar to platforms like Instagram or X, where users can create accounts, log in. The application allows users to share posts, view content, and manage their profiles.
 
 ## Features:
 - **Account Creation**: Users can create their accounts and log in.
