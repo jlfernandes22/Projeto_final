@@ -66,12 +66,12 @@
     border-radius: 10px;
     padding: 5px 2px;
     margin-bottom: 10px;
-    background-color: aqua;
+    background-color: grey;
     cursor: pointer;
     transition: background-color 1s;
 }
 .chooseFile:hover{
-    background-color: darkcyan;
+    background-color: darkgrey;
 }
 .backToFeedMenu{
     display: block;

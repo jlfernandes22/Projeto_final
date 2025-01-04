@@ -40,7 +40,7 @@ function SignInForm({ toggle }) {
                 if (data.error) {
                     setErrorMessage(data.error)
                 } else {
-                    handleGoToFeed(data.user.name)
+                    handleGoToFeed(data.user.id)
                 }
             })
             .catch(error => {
@@ -48,11 +48,11 @@ function SignInForm({ toggle }) {
                 console.error('Fetch error:', error);
             });
     }
-    function handleGoToFeed() {
+    function handleGoToFeed(user_id) {
         navigate('feed');
         localStorage.setItem("username", username);
+        localStorage.setItem("user_id",user_id);
         window.location.reload();
-        console.log(username);
     }
     
 
@@ -82,9 +82,6 @@ function SignInForm({ toggle }) {
                 </div>
             </form>
     );
-}
-export function getUsername(){
-    return username;
 }
 
 export default SignInForm;
