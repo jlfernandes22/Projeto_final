@@ -11,11 +11,12 @@
  5. Eliminar o conteudo dessa pasta, e criar uma pasta com o nome de "restapi" 
  6. Copiar estes ficheiros "db.php" e "users.php" para destro da pasta criada
  7. (image_placeolder), clicar botao admin de MySql
+ 8. Criar Base de Dados com nome "users"
+ 9. Clicar na base de dados e de seguida em SQL
+ 10.Criar as tabelas com estes seguintes comandos
   
  SEGUNDA PARTE
-
- Criar Base de Dados com nome "users"
- Clicar na base de dados e de seguida em SQL
- Criar as tabelas com estes seguintes comandos
+ 1.Instalar Node no seu computador
+ 
 
  (PlaceOlderComandos)
