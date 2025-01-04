@@ -78,7 +78,7 @@ CREATE TABLE posts (
 CREATE TABLE post_images (
     id INT AUTO_INCREMENT PRIMARY KEY,
     post_id INT NOT NULL,
-    image_base64 TEXT,  -- To store the base64-encoded image data
+    image_base64 MEDIUMTEXT,  -- To store the base64-encoded image data
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
 );
