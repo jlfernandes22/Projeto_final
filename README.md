@@ -48,6 +48,8 @@
 ![What'sUPScreenshot](Images/screenshot.png)
 
 ## MySQL
+![MYphpadminScreenshot](Images/XampControlPanel.png)
+- Click the button admin next to MySQL
 ![MYphpadminScreenshot](Images/CreateDataBase.png)
 - Just create the data base with the name "users"
 ![MYphpadminScreenshot](Images/SqlCodesInput.png)
