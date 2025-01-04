@@ -45,12 +45,12 @@
 
 ## Demo
 
-![What'sUP Screenshot](Images\screenshot.png)
+![What'sUP Screenshot](Images/screenshot.png)
 
 ## MySQL
-![MYphpadminScreenshot](Images\CreateDataBase.png)
+![MYphpadminScreenshot](Images/CreateDataBase.png)
 - Just create the data base with the name "users"
-![MYphpadminScreenshot](Images\SqlCodesInput.png)
+![MYphpadminScreenshot](Images/SqlCodesInput.png)
 - Having the new DataBase selected just paste all the code below and press "GO"
 ```bash
 CREATE TABLE users (
