@@ -50,6 +50,8 @@ function Content() {
                     console.log("Response Text:", text);
                     try {
                         const data = JSON.parse(text); // Parse text to JSON
+                        navigate("feed");
+                        window.location.reload();
                         if (data.error) {
                             setErrorMessage(data.error);
                         }

@@ -70,6 +70,7 @@ function EditProfile({ setProfilePicture }) {
                     console.log('Profile Updated Successfully!');
                     changeUsername(newUsername);
                     changeProPicture(newProfilePic)
+                    window.location.reload();
                 }
             })
             .catch(error => {

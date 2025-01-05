@@ -10,11 +10,13 @@ function Search() {
     const userAlvo = useRef(null); 
     const resultado = useRef(null);
     const imgResultado = useRef(null);
+    const buttonSeguir = useRef(null);
+    const buttonNaoSeguir =useRef(null);
     const [imgProfile, setImgProfile] = useState(null);
     const [users, setUsers] = useState([]); 
     const [searchInput, setSearchInput] = useState(''); 
     const [userFollow, setUserFollow] = useState(null);
-    const [error, setError] = useState(''); 
+    const [error, setError] = useState('');
 
     useEffect(() => {
         getAllUsers();
@@ -85,6 +87,40 @@ function Search() {
                 console.error('Fetch error:', error);
             })
     }
+    function unfollow(action, idFollower, idFollowed) {
+        console.log("Entrou!!!");
+        const jsonData = {action: action, follower_id: Number(idFollower), followed_id: Number(idFollowed)}
+
+        const options = {
+            method: 'UNFOLLOW',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData),
+        };
+
+        fetch('http://localhost/restapi/users.php', options)
+            .then(response => {
+                console.log("Entrou2!!!")
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                if(data.error){
+                    setError(data.error)
+                }else{
+                    setError("");
+                    console.log(data)
+                    console.log("Successfully unfollowed!");
+                }
+            })
+            .catch(error => { 
+                console.error('Fetch error:', error);
+            })
+    }
     
     function searchUser(user){
         
@@ -94,6 +130,8 @@ function Search() {
                 imgResultado.current.style.display = "block"
                 userAlvo.current.style.display = "block"                
                 resultado.current.textContent = `${users[i].name}`;
+                buttonSeguir.current.style.display = "block"
+                buttonNaoSeguir.current.style.display = "block"
                 setUserFollow(users[i].id);
                 if(users[i].profile_picture == null){
                     setImgProfile(profileDefault);
@@ -102,6 +140,8 @@ function Search() {
                 }
                 break;
             }
+            buttonSeguir.current.style.display = "none"
+            buttonNaoSeguir.current.style.display = "none"
             userAlvo.current.style.display = "block"
             resultado.current.textContent = "Utilizador não encontrado";
         }
@@ -112,6 +152,13 @@ function Search() {
             follow("follow", user_id, userFollow);
         }else{
             console.log("nao podes seguir-te a ti mesmo!")
+        }
+    }
+    function clickToUnfollow(){
+        if(userFollow !== Number(user_id)){
+            unfollow("unfollow", user_id, userFollow);
+        }else{
+            console.log("nao podes nao seguir-te a ti mesmo!")
         }
     }
 
@@ -137,7 +184,7 @@ function Search() {
                         type="text"
                         value={searchInput}
                         onChange={(e) => setSearchInput(e.target.value)}
-                        placeholder="Enter username"
+                        placeholder="Insira um nome"
                     />
                 </li>
                 <li>
@@ -149,9 +196,12 @@ function Search() {
             <div className="pesquisa" ref={userAlvo}>
                 <img ref={imgResultado} className="profileImage" src={imgProfile} alt="" />
                 <p className="pesquisaResultado" ref={resultado}></p>
-                <button className="seguir" onClick={() => {
+                <button ref={buttonSeguir} className="seguir" onClick={() => {
                     clickToFollow();
                 }}>Seguir</button>
+                <button ref={buttonNaoSeguir} onClick={() =>{
+                    clickToUnfollow();
+                }}>Não Seguir</button>
             </div>
         </div>
     );
