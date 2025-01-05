@@ -1,14 +1,230 @@
-.feed{
-    border: 5px solid black;
-    max-width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    height: 64vh;
-    border-radius: 3em;
-    background-color:lightgrey;
+
+
+body {
+    background-color:rgba(0, 0, 0, 0.94);
 }
-@media only screen and (max-width: 930px) {}
+
+@media only screen and (min-width: 930px) {
+
+    .feed .feedList .Imagens .UserPFP{
+        display: block;
+        position: absolute;
+        top: 1vh;
+        left: 1vw;
+        max-width: 5vw;
+        border-radius: 50px;
+        border: 2px solid white;
+        z-index: 1;
+    }
+    
+
+    .feed .Imagens{
+        display: block;
+        position: relative;
+        min-height: 20vh;
+        
+        border: 3px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        width: 78vw;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .feed .Imagens .postMessage{
+        display: block;
+        border: 1.5px solid rgba(46, 46, 46, 0.676);
+        text-align: left;
+        top: 6vh;
+        left: 4vw;
+        max-width: 40vw;
+        position: absolute;
+        
+        color: white;
+        font-size: 2vw;
+        font-family: 'Roboto', sans-serif;
+        
+        overflow: wrap;
+        
+        
+        
+
+    }
+
+    .feed .postUser{
+        
+        position: absolute;
+        
+        top: 2vh;
+        left: 6vw;
+        display: inline-table;
+        color: white;
+        font-size: 1.5vw;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-align: center;
+
+    }
+
+    
+
+    
+
+    .feed .postImg_feed:hover{
+        transform: scale(1.5);
+        transform-origin: top right;
+        transition: 0.3s;
+        z-index: 5;
+    }
+
+    .feed .postImg_feed{
+        
+        position: inherit;
+        display: block;
+        padding-left: 48vw;
+        max-width: 30vw;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+        z-index: 1;
+  
+        padding-right: 3vw;
+        overflow: hidden;
+
+    }
+
+    .feed .feedList{
+
+        width: 40vw;
+
+    }
+
+    .feed {
+
+        
+        display: block;
+        position: absolute;
+        left: 12vw;
+        right: 0;
+        
+        color: white;
+        height: 100vh;
+        max-width: 82vw;
+        overflow: scroll;
+        background-color: rgba(0, 0, 0, 0.86);
+
+    }
+}
+
+@media only screen and (max-width: 930px) {
+
+    .feed .feedList .Imagens .UserPFP{
+        display: block;
+        position: absolute;
+        top: 1vh;
+        left: 1vw;
+        max-width: 5vw;
+        border-radius: 50px;
+        border: 2px solid white;
+        z-index: 1;
+    }
+
+    .feed .Imagens{
+        display: block;
+        position: relative;
+        min-height: 15vh;
+        max-height: none;
+        border: 3px solid rgb(255, 255, 255);
+        border-radius: 20px;
+        width: 99vw;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .feed .Imagens .postMessage{
+        display: block;
+        border: 1.5px solid rgba(46, 46, 46, 0.676);
+        text-align: left;
+        top: 7vh;
+        left: 4vw;
+        max-width: 60vw;
+        position: absolute;
+        
+        color: white;
+        font-size: 2.5vw;
+        font-family: 'Roboto', sans-serif;
+        
+        overflow: wrap;
+        
+        
+        
+
+    }
+
+    .feed .postUser{
+        
+        position: absolute;
+        
+        top: 2vh;
+        left: 7vw;
+        display: inline-table;
+        color: white;
+        font-size: 1.5vw;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-align: center;
+
+    }
+
+    
+
+    
+
+    .feed .postImg_feed:hover{
+        transform: scale(1.5);
+        transform-origin: top right;
+        transition: 0.3s;
+        z-index: 5;
+    }
+
+    .feed .postImg_feed{
+        
+        position: inherit;
+        display: block;
+        padding-left: 66vw;
+        z-index: 1;
+        max-width: 30vw;
+        
+  
+        padding-right: 3vw;
+        overflow: hidden;
+
+    }
+
+    .feed .feedList{
+
+
+        position: absolute;
+        
+        left: 0;
+        right: 0;
+        
+
+    }
+
+    .feed {
+        z-index: -1;
+        overflow: scroll;
+        display: block;
+        position: fixed;
+
+        height: 79vh;
+        width: 100vw;
+        background-color: rgb(15, 14, 14);
+       
+    }
+}

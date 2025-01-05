@@ -3,6 +3,7 @@ import Feed from "./Feed";
 import Footer from "./Footer";
 
 function FeedPage(){
+    
     return(
         <>
             <Header></Header>

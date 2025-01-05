@@ -1,6 +1,90 @@
 .containerEditProfile{
+    position: absolute;
     text-align: center;
+    width: 35vw;
+    max-width: 280px;
+    min-height:220px ;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: grey;
+    border-radius: 20px;
     padding: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.containerEditProfile .profileImagePreview{
+    
+    display: inline-block;
+    position: relative;
+
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-bottom: 60px;
+}
+
+.ImageChooser{
+    
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+    bottom: 5vh;
+    width: 20vw;
+    max-width: 130px;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 1em;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.ImageChooser:hover{
+    
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
+}
+
+.editButton{
+    
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+    bottom: 1vh;
+    width: 20vw;
+    max-width: 130px;
+    font-size: 1em;
+    padding: 5px;
+    border-radius: 1em;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.5s;
+    cursor: pointer;
+}
+
+.editButton:hover{
+    
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
+}
+
+.containerEditProfile input{
+    width: 80%;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
 }

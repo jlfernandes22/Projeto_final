@@ -5,7 +5,8 @@
 ## Features:
 - **Account Creation**: Users can create their accounts and log in.
 - **Post Sharing**: Users can share posts.
-- **Profile Management**: FUTURE UPDATE.
+- **Profile Management**: You can change your username, password and profile picture, you can see your posts, Followers and Following are being worked on.
+- **Chats**: Being Worked on
 
 ## Requirements:
 - **XAMPP**: You'll need XAMPP to set up a local server.
@@ -44,7 +45,7 @@
      ```bash
      npm run dev
      ```
-   - Open your browser and go to `http://localhost:3000` to access the app.
+   - Then open your broswer and go to the link that appeared in your console must be something like this one `http://localhost:3000`
 
 ## Demo
 

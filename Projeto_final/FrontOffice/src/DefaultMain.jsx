@@ -7,6 +7,7 @@ import Search from "./Search/Search";
 import Content from "./Content/Content";
 import Loginpage from "./Login/Loginpage";
 import EditProfile from "./Definitions/EditProfile";
+import OtherProfiles from "./Profile/OtherProfiles";
 
 function DefaultMain() {
 
@@ -24,6 +25,7 @@ function DefaultMain() {
                 {page === "search" && <Search />}
                 {page === "addcontent" && <Content />}
                 {page === "editprofile" && <EditProfile/>}
+                {page === "otherprofiles" && <OtherProfiles/>}
             </>
     );
 }
