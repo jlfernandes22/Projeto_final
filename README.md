@@ -13,7 +13,7 @@
 5. [Demo](#demo)
 6. [MySQL Setup](#mysql)
 7. [API Files](#api-files)
-8. [Portuguese Version](#portuguese-version)
+8. [Portuguese Version](README_PT.md)
 
 ## Features
 - **Account Creation**: Users can create their accounts and log in.
