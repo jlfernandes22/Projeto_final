@@ -2,7 +2,7 @@
     
     background-color: rgb(0, 0, 0);
     width: 65vw;
-    height: 70vh;
+    height: 570px;
     text-align: center;
     margin: auto;
     padding-top: 10px;
@@ -19,7 +19,7 @@
     align-items: center;
     list-style: none;
     
-    height: 10vh;
+    height: 97px;
     border: 2px solid white;
     right: 0;
     left: 0;
