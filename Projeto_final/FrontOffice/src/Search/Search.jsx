@@ -140,6 +140,7 @@ function Search() {
                 }
                 break;
             }
+            imgResultado.current.style.display = "none"
             buttonSeguir.current.style.display = "none"
             buttonNaoSeguir.current.style.display = "none"
             userAlvo.current.style.display = "block"
