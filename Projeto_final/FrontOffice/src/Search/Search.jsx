@@ -200,7 +200,7 @@ function Search() {
                 <button ref={buttonSeguir} className="seguir" onClick={() => {
                     clickToFollow();
                 }}>Seguir</button>
-                <button ref={buttonNaoSeguir} onClick={() =>{
+                <button ref={buttonNaoSeguir} className="Naoseguir" onClick={() =>{
                     clickToUnfollow();
                 }}>Não Seguir</button>
             </div>

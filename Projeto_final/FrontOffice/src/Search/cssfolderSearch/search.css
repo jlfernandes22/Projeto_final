@@ -45,21 +45,50 @@ body {
     display: none;
     align-items: center;
     justify-content: center;
-    height: 100px;
+    height: 120px;
     padding: 25px;
     border-top: 3px solid rgb(255, 255, 255);
 }
+
 .containerSearch .pesquisa .seguir{
     display: block;
     width: 7vw;
+    font-size: small;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 1em;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 1s;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.containerSearch .pesquisa .seguir:hover{
     background-color: rgb(0, 0, 0);
     color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    cursor: pointer;
-    margin-top: 10px;
+    border-color: white;
 }
+.containerSearch .pesquisa .Naoseguir{
+    display: block;
+    width: 11vw;
+    font-size: small;
+    padding: 5px;
+    border-radius: 1em;
+    border: 2px solid black;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.5s;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.containerSearch .pesquisa .Naoseguir:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
+}
+
 .containerSearch .pesquisaResultado{
     position: absolute;
     display: block;
