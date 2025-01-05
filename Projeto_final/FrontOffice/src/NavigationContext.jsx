@@ -22,8 +22,14 @@ export function NavigationProvider({children}){
         setUser_Id(newUserID);
         localStorage.setItem("user_id",newUserID);
     }
+    const [proPicture, setProPicture] = useState(() => {
+        return localStorage.getItem("proPicture") || ''});
+    const changeProPicture = (newProPicture) => {
+        setProPicture(newProPicture);
+        localStorage.setItem("proPicture",newProPicture);
+    }
     return(
-        <NavigationContext.Provider value={{page, navigate, username, changeUsername, user_id, changeUserID}}>
+        <NavigationContext.Provider value={{page, navigate, username, changeUsername, user_id, changeUserID, proPicture, changeProPicture}}>
             {children}
         </NavigationContext.Provider>
     );

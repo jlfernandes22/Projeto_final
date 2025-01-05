@@ -3,12 +3,12 @@ import { useNavigation } from "../NavigationContext";
 import "./editprofile.css";
 
 function EditProfile({ setProfilePicture }) {
-    const { username, changeUsername, user_id } = useNavigation();
+    const { username, changeUsername, user_id , proPicture, changeProPicture} = useNavigation();
     const userSubmit = useRef("");
     const passSubmit = useRef("");
     const [newUser, setNewUser] = useState("");
     const [newPass, setNewPass] = useState("");
-    const [profilePicture, setProfilePictureState] = useState(null); // Local state for holding profile image
+    const [profilePictureState, setProfilePictureState] = useState(null); // Local state for holding profile image
     const fileInput = useRef(null);
 
     useEffect(() => {
@@ -67,8 +67,9 @@ function EditProfile({ setProfilePicture }) {
                 if (data.error) {
                     console.error('Server error:', data.error);
                 } else {
-                    //console.log('Profile Updated Successfully!');
+                    console.log('Profile Updated Successfully!');
                     changeUsername(newUsername);
+                    changeProPicture(newProfilePic)
                 }
             })
             .catch(error => {
@@ -101,10 +102,10 @@ function EditProfile({ setProfilePicture }) {
             />
             <p>Alterar Imagem</p>
             <button onClick={handleFileButton}>Escolher Imagem</button>
-            {profilePicture && <img src={profilePicture} alt="Preview" className="profileImagePreview" />}
+            {profilePictureState && <img src={profilePictureState} alt="Preview" className="profileImagePreview" />}
             <button 
                 style={{ display: "block", margin: "auto" }} 
-                onClick={() => changeUserName(user_id, newUser, newPass, profilePicture)}
+                onClick={() => changeUserName(user_id, newUser, newPass, profilePictureState)}
             >
                 Alterar
             </button>

@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, useRef } from "react";
-import defaultProfile from './Header/anonymity.png'; // Default profile picture
+import defaultProfilePicture from './Header/anonymity.png'; // Default profile picture
 import message from './Header/comment.png';
 import logout from './Header/exit_logout.png';
 import "./cssfolderFeed/header.css";
@@ -7,10 +7,10 @@ import { useNavigation } from "../NavigationContext";
 
 function Header() {
     const profileName = useRef();
-    const { navigate, username, user_id } = useNavigation();
+    const { navigate, username, user_id, proPicture} = useNavigation();
     const [allUsers, setAllUsers] = useState([]);
     const [error, setError] = useState("");
-    const [profilePicture, setProfilePicture] = useState(defaultProfile);
+    const [profilePicture, setProfilePicture] = useState(defaultProfilePicture);
 
     useEffect(() => {
         getAllUsers();
@@ -22,12 +22,13 @@ function Header() {
     useEffect(() => {
         // Update the profile picture whenever allUsers or user_id changes
         if (allUsers.length > 0 && user_id) {
-            const user = allUsers.find(user => user.id === user_id);
-            if (user && user.profile_picture) {
-                setProfilePicture(user.profile_picture);
-            } else {
-                setProfilePicture(defaultProfile); // Fallback to default picture
-            }
+                    if (proPicture) {
+                        console.log("Entrou")
+                        setProfilePicture(proPicture); // Set the profile picture from the API
+                    } else {
+                        setProfilePicture(defaultProfilePicture); // Use default image if not available
+                    }
+
         }
     }, [allUsers, user_id]);
 

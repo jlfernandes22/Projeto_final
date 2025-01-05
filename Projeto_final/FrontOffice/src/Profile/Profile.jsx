@@ -23,13 +23,18 @@ function Profile() {
 
     useEffect(() => {
         if (allUsers.length > 0 && user_id) {
-            const user = allUsers.find(user => user.id === user_id);
-            console.log(user);
-            if (user && user.profile_picture) {
-                console.log(user.profile_picture)
-                setProfilePicture(user.profile_picture); // Set the profile picture from the API
-            } else {
-                setProfilePicture(defaultProfilePicture); // Use default image if not available
+            for(let i=0;i<allUsers.length;i++){
+                console.log("allUsers.id: "+typeof allUsers[i].id)
+                console.log("current id: "+typeof user_id)
+                if(allUsers[i].id === Number(user_id)){
+                    console.log("Entrou 1")
+                    if (allUsers[i].profile_picture) {
+                        console.log("Entrou")
+                        setProfilePicture(allUsers[i].profile_picture); // Set the profile picture from the API
+                    } else {
+                        setProfilePicture(defaultProfilePicture); // Use default image if not available
+                    }
+                }
             }
         }
     }, [allUsers, user_id]);
