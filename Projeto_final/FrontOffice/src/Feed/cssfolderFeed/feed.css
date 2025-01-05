@@ -39,11 +39,11 @@ body {
         text-align: left;
         top: 6vh;
         left: 4vw;
-        max-width: 57vw;
+        max-width: 40vw;
         position: absolute;
         
         color: white;
-        font-size: 2.5vw;
+        font-size: 2vw;
         font-family: 'Roboto', sans-serif;
         
         overflow: wrap;
@@ -110,7 +110,7 @@ body {
         
         color: white;
         height: 100vh;
-        max-width: 80vw;
+        max-width: 82vw;
         overflow: scroll;
         background-color: rgba(0, 0, 0, 0.86);
 
