@@ -139,7 +139,6 @@ function Feed() {
                             let foto = "";
                             if(user.profile_picture === null){
                                 foto = defaultProfilePicture;
-                                console.log(foto);
                             }else{
                                 foto = user.profile_picture;
                             }

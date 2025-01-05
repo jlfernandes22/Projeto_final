@@ -23,7 +23,6 @@ function Header() {
         // Update the profile picture whenever allUsers or user_id changes
         if (allUsers.length > 0 && user_id) {
                     if (proPicture) {
-                        console.log("Entrou")
                         setProfilePicture(proPicture); // Set the profile picture from the API
                     } else {
                         setProfilePicture(defaultProfilePicture); // Use default image if not available
@@ -73,10 +72,7 @@ function Header() {
                     alt="Profile" 
                     title="Profile" 
                 />
-                <span 
-                    onClick={() => {
-                        console.log(allUsers);
-                    }} 
+                <span
                     className="welcomeMessage" 
                     ref={profileName}
                 >

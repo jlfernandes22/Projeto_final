@@ -6,14 +6,14 @@ import searchImg from "./ImgSearch/search.png";
 import profileDefault from "./ImgSearch/anonymity.png"
 
 function Search() {
-    const { navigate } = useNavigation();
+    const { navigate,user_id } = useNavigation();
     const userAlvo = useRef(null); 
     const resultado = useRef(null);
     const imgResultado = useRef(null);
     const [imgProfile, setImgProfile] = useState(null);
     const [users, setUsers] = useState([]); 
     const [searchInput, setSearchInput] = useState(''); 
-    const [userToFollow, setUserToFollow] = useState(null);
+    const [userFollow, setUserFollow] = useState(null);
     const [error, setError] = useState(''); 
 
     useEffect(() => {
@@ -51,12 +51,12 @@ function Search() {
                 console.error('Fetch error:', error);
             });
     }
-    function getAllFollowers(id) {
-        
-        const jsonData = {id: Number(id)}
+    function follow(action, idFollower, idFollowed) {
+        console.log("Entrou!!!");
+        const jsonData = {action: action, follower_id: Number(idFollower), followed_id: Number(idFollowed)}
 
         const options = {
-            method: 'GET_FOLLOWERS',
+            method: 'FOLLOW',
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -65,25 +65,25 @@ function Search() {
 
         fetch('http://localhost/restapi/users.php', options)
             .then(response => {
-                
+                console.log("Entrou2!!!")
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
                 return response.json();
             })
             .then(data => {
-
+                console.log(data);
                 if(data.error){
                     setError(data.error)
                 }else{
                     setError("");
-                    
-                    setUsers(data);
+                    console.log(data)
+                    console.log("Successfully followed!");
                 }
             })
             .catch(error => { 
                 console.error('Fetch error:', error);
-            });
+            })
     }
     
     function searchUser(user){
@@ -91,12 +91,10 @@ function Search() {
         for(let i=0;i<users.length;i++){
             
             if(users[i].name == user){
-                console.log("entrou")
-                console.log(users[i].name)
-                console.log(users);
                 imgResultado.current.style.display = "block"
                 userAlvo.current.style.display = "block"                
                 resultado.current.textContent = `${users[i].name}`;
+                setUserFollow(users[i].id);
                 if(users[i].profile_picture == null){
                     setImgProfile(profileDefault);
                 }else{
@@ -108,6 +106,16 @@ function Search() {
             resultado.current.textContent = "Utilizador não encontrado";
         }
     }
+
+    function clickToFollow(){
+        if(userFollow !== Number(user_id)){
+            follow("follow", user_id, userFollow);
+        }else{
+            console.log("nao podes seguir-te a ti mesmo!")
+        }
+    }
+
+
 
 
     return (
@@ -141,7 +149,9 @@ function Search() {
             <div className="pesquisa" ref={userAlvo}>
                 <img ref={imgResultado} className="profileImage" src={imgProfile} alt="" />
                 <p className="pesquisaResultado" ref={resultado}></p>
-                <button className="seguir">Seguir</button>
+                <button className="seguir" onClick={() => {
+                    clickToFollow();
+                }}>Seguir</button>
             </div>
         </div>
     );
