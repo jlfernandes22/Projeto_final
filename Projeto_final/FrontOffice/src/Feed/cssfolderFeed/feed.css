@@ -7,7 +7,7 @@ body {
 @media only screen and (min-width: 930px) {
 
     
-
+    
 
     .feed .postImg_feed{
 
@@ -43,9 +43,56 @@ body {
 
 @media only screen and (max-width: 930px) {
 
-    .feed .postImg_feed{
+    .feed .Imagens{
+        display: block;
+        position: relative;
+        margin: auto;
+        margin-top: 20px;
+        border: 2px solid white;
+    }
 
-        width: 40vw;
+    .feed .postUser{
+        border: 2px solid white;
+        display: inline-block;
+        
+        width: 20vw;
+        position: relative;
+     
+        
+        color: white;
+        font-size: 1.5vw;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-align: center;
+
+    }
+
+    .feed .postMessage{
+        border: 2px solid white;
+        display: inline-block;
+        position: relative;
+        
+
+
+        
+        color: white;
+        font-size: 2vw;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 500;
+        text-align: center;
+        
+
+    }
+
+    .feed .postImg_feed{
+        
+        position: inherit;
+        display: inline-block;
+        max-width: 50vw;
+        max-height: 40vh;
+        min-width: 200px;
+        min-height: 200px;
+        
 
     }
 
@@ -56,7 +103,7 @@ body {
         
         left: 0;
         right: 0;
-        margin: auto;
+        
 
     }
 
