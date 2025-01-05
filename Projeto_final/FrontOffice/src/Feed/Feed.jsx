@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import defaultProfilePicture from "./Header/anonymity.png"
 import "./cssfolderFeed/feed.css";
 
 function Feed() {
@@ -133,9 +134,15 @@ function Feed() {
                         if (typeof item === "object") {
                             // Find the user in the allUsers array
                             const user = allUsers.find(user => user.id === currentUserId);
-                            const username = user ? user.name : `Unknown User (ID: ${currentUserId})`;
-    
+                            const userNAME = user ? user.name : `Unknown User (ID: ${currentUserId})`;
                             // Render the post with the username
+                            let foto = "";
+                            if(user.profile_picture === null){
+                                foto = defaultProfilePicture;
+                                console.log(foto);
+                            }else{
+                                foto = user.profile_picture;
+                            }
                             return (
                                 <li key={index} className="Imagens">
                                     <img
@@ -144,7 +151,8 @@ function Feed() {
                                         alt={`Post ${index}`}
                                     />
                                     <p className="postMessage">{item.caption}</p>
-                                    <p className="postUser">Published by: {username}</p>
+                                    <img src={foto} style={{width: "50px"}} alt="" />
+                                    <p className="postUser">Published by: {userNAME}</p>
                                 </li>
                             );
                         }
