@@ -24,43 +24,47 @@ function Content() {
     };
 
     function createPost(action, id, caption, imgCerto) {
-        const images = [imgCerto];
-        const user_id = Number(id);
-        
-        const jsonData = { action, user_id, caption, images };
-        console.log(jsonData);
-        const options = {
-            method: 'POSTS',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(jsonData),
-        };
-    
-        fetch('http://localhost/restapi/users.php', options)
-            .then(response => {
-                console.log("Raw Response:", response);
-                if (!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.statusText}`);
-                }
-                return response.text();
-            })
-            .then(text => {
-                console.log("Response Text:", text);
-                try {
-                    const data = JSON.parse(text); // Parse text to JSON
-                    if (data.error) {
-                        setErrorMessage(data.error);
+        if (caption !== "" || imgCerto !== null) {
+            const images = [imgCerto];
+            const user_id = Number(id);
+
+            const jsonData = { action, user_id, caption, images };
+            console.log(jsonData);
+            const options = {
+                method: 'POSTS',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(jsonData),
+            };
+
+            fetch('http://localhost/restapi/users.php', options)
+                .then(response => {
+                    console.log("Raw Response:", response);
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok: ${response.statusText}`);
                     }
-                } catch (err) {
-                    console.error("JSON Parse Error:", err);
-                }
-            })
-            .catch(error => {
-                console.error('Fetch error:', error);
-            });
+                    return response.text();
+                })
+                .then(text => {
+                    console.log("Response Text:", text);
+                    try {
+                        const data = JSON.parse(text); // Parse text to JSON
+                        if (data.error) {
+                            setErrorMessage(data.error);
+                        }
+                    } catch (err) {
+                        console.error("JSON Parse Error:", err);
+                    }
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                });
+        }else{
+            console.log("Entrou");
+        }
     }
-    
+
 
 
     const handleFileButton = () => {
@@ -87,7 +91,7 @@ function Content() {
             </div>
             <ul style={{ listStyle: "none" }}>
                 <li><button className="chooseFile" onClick={handleFileButton}>Adicionar Imagem</button></li>
-                <li><button className="chooseFile" onClick={() => createPost("create", user_id,captionPost,imageSrc)}>Publicar Post</button></li>
+                <li><button className="chooseFile" onClick={() => createPost("create", user_id, captionPost, imageSrc)}>Publicar Post</button></li>
                 <li><img className="backToFeedMenu" src={backMenu} alt="VoltarFeed" onClick={() => {
                     navigate("feed");
                     window.location.reload();

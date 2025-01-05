@@ -13,6 +13,7 @@ function Search() {
     const [imgProfile, setImgProfile] = useState(null);
     const [users, setUsers] = useState([]); 
     const [searchInput, setSearchInput] = useState(''); 
+    const [userToFollow, setUserToFollow] = useState(null);
     const [error, setError] = useState(''); 
 
     useEffect(() => {
@@ -26,6 +27,40 @@ function Search() {
             headers: {
                 'Content-Type': 'application/json'
             },
+        };
+
+        fetch('http://localhost/restapi/users.php', options)
+            .then(response => {
+                
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+
+                if(data.error){
+                    setError(data.error)
+                }else{
+                    setError("");
+                    
+                    setUsers(data);
+                }
+            })
+            .catch(error => { 
+                console.error('Fetch error:', error);
+            });
+    }
+    function getAllFollowers(id) {
+        
+        const jsonData = {id: Number(id)}
+
+        const options = {
+            method: 'GET_FOLLOWERS',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData),
         };
 
         fetch('http://localhost/restapi/users.php', options)

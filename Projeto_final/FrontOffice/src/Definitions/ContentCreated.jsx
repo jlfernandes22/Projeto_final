@@ -10,10 +10,10 @@ function ContentCreated() {
     const {user_id} = useNavigation();
 
     useEffect(() => {
-        createPost("fetch", user_id);
+        showPosts("fetch", user_id);
     }, [])
 
-    function createPost(action, id) {
+    function showPosts(action, id) {
         const user_id = Number(id);
         const jsonData = { action, user_id };
         const options = {
@@ -42,7 +42,6 @@ function ContentCreated() {
             })
             .catch(error => {
                 console.error('Fetch error:', error);
-                setAllContent([]); // Handle errors gracefully
             });
     }
     

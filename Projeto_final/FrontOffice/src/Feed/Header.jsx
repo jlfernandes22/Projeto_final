@@ -14,7 +14,6 @@ function Header() {
         if(profileName.current != null){
             profileName.current.textContent = `Welcome ${username}!`;
         }
-        console.log(user_id);
     }, [username])
 
     return (

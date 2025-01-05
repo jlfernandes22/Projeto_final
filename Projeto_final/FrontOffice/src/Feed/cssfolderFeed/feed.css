@@ -15,7 +15,7 @@ body {
         left: 0;
         right: 0;
         margin: auto;
-    
+        color: white;
         height: 100vh;
         max-width: 72vw;
         background-color: rgba(0, 0, 0, 0.86);
