@@ -6,7 +6,16 @@ body {
 
 @media only screen and (min-width: 930px) {
 
-    
+    .feed .feedList .Imagens .UserPFP{
+        display: block;
+        position: absolute;
+        top: 1vh;
+        left: 1vw;
+        max-width: 5vw;
+        border-radius: 50px;
+        border: 2px solid white;
+        z-index: 1;
+    }
     
 
     .feed .Imagens{
@@ -67,6 +76,7 @@ body {
         transform: scale(1.5);
         transform-origin: top right;
         transition: 0.3s;
+        z-index: 5;
     }
 
     .feed .postImg_feed{
@@ -109,10 +119,21 @@ body {
 
 @media only screen and (max-width: 930px) {
 
+    .feed .feedList .Imagens .UserPFP{
+        display: block;
+        position: absolute;
+        top: 1vh;
+        left: 1vw;
+        max-width: 5vw;
+        border-radius: 50px;
+        border: 2px solid white;
+        z-index: 1;
+    }
+
     .feed .Imagens{
         display: block;
         position: relative;
-        min-height: 14vh;
+        min-height: 15vh;
         max-height: none;
         border: 3px solid rgb(255, 255, 255);
         border-radius: 20px;
@@ -128,7 +149,7 @@ body {
         display: block;
         border: 1.5px solid rgba(46, 46, 46, 0.676);
         text-align: left;
-        top: 6vh;
+        top: 7vh;
         left: 4vw;
         max-width: 60vw;
         position: absolute;
@@ -149,7 +170,7 @@ body {
         position: absolute;
         
         top: 2vh;
-        left: 6vw;
+        left: 7vw;
         display: inline-table;
         color: white;
         font-size: 1.5vw;
@@ -167,6 +188,7 @@ body {
         transform: scale(1.5);
         transform-origin: top right;
         transition: 0.3s;
+        z-index: 5;
     }
 
     .feed .postImg_feed{
@@ -174,7 +196,7 @@ body {
         position: inherit;
         display: block;
         padding-left: 66vw;
-        
+        z-index: 1;
         max-width: 30vw;
         
   

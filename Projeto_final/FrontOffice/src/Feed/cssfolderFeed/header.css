@@ -32,8 +32,7 @@
         top: 40vh;
         left: 2vw;
         margin: auto;
-        border-top-right-radius: 30px;
-        border-bottom-right-radius: 30px;
+        
         cursor: pointer;
         transition: 0.3s;
     }
