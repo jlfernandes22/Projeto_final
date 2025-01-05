@@ -1,76 +1,76 @@
-.friends{
+.friends {
     width: 50px;
     height: 50px;
     border-radius: 100px;
     border: 1.5px solid rgb(255, 255, 255);
     cursor: pointer;
 }
-.friendName{
+
+.friendName {
     font-size: 20px;
     word-wrap: break-word;
     word-break: break-word;
     overflow-wrap: break-word;
     cursor: pointer;
 }
-.friendList{
+
+.friendList {
+
     position: absolute;
     list-style: none;
     background-color: rgb(0, 0, 0);
-    left: 0;
-    right: 0;
+    right: 1vw;
     margin: auto;
-    top: 70vh;
+    top: 30vh;
     width: 33vw;
     border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
-    
+
 }
 
-.friendList .ASeguir{
+.friendList .ASeguir {
     color: white;
     text-align: center;
 }
 
-.friendList .Seguidores{
+.friendList .Seguidores {
     color: white;
     text-align: center;
 }
 
-.friendList li{
-    position: absolute;
-    list-style: none;
-    background-color: rgb(0, 0, 0);
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 30vw;
-    border-radius: 20px;
+.friendList li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px;
-    border: 2px solid rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(255, 255, 255);
+    border-radius: 12px;
 }
 
-.friendName{
+.friendName {
     color: white;
 }
 
 .toggleButtons {
-    
+
     font-size: 1.5em;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     position: absolute;
-    left: 0;
-    right: 0;
+    right: 9vw;
+    top: 23vh;
     width: 10em;
     margin: auto;
-    
-    gap: 10px; 
-    margin-bottom: 10px; 
+
+    gap: 10px;
+    margin-bottom: 10px;
+    transition: 0.3s;
 }
 
 .toggleButtons button {
-    
+
     display: block;
     width: 200px;
     font-size: 1em;
@@ -81,16 +81,43 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: background-color 0.5s;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .toggleButtons button:hover {
-    background-color: #2e2f30; 
-    color: white; 
+    background-color: #2e2f30;
+    color: white;
 }
 
 .toggleButtons button.active {
     width: 200px;
     background-color: #333436;
-    color: white; 
+    color: white;
     border: 2px solid #ffffff;
+}
+
+@media only screen and (max-width: 930px) {
+    .friendList {
+        width: 60vw;
+        right: 0;
+        left: 0;
+        top: 40vh;
+    }
+
+    .toggleButtons {
+        font-size: 1.5em;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 30vh;
+        width: 10em;
+        margin: auto;
+
+        gap: 10px;
+        margin-bottom: 10px;
+        transition: 0.3s;
+    }
 }

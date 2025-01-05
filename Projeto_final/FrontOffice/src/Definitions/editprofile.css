@@ -33,7 +33,7 @@
     right: 0;
     margin: auto;
     margin-top: 10px;
-    bottom: 5vh;
+    bottom: 50px;
     width: 20vw;
     max-width: 130px;
     font-size: 1em;
@@ -87,4 +87,23 @@
     padding: 5px;
     border-radius: 10px;
     border: 2px solid black;
+}
+@media only screen and (max-width: 930px) {
+
+    .containerEditProfile{
+        position: absolute;
+        text-align: center;
+        width: 35vw;
+        max-width: 280px;
+        min-height:220px ;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: grey;
+        border-radius: 20px;
+        padding: 5px;
+        left: 0;
+        right: 0;
+        top: 300px;
+        margin: auto;
+    }
+
 }
