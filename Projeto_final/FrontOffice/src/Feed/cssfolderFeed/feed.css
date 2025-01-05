@@ -1,12 +1,21 @@
+*{
+    -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+}
 
+*::-webkit-scrollbar {
+    display: none;
+  }
 
 body {
-    background-color:rgba(0, 0, 0, 0.94);
+    background-color: rgba(0, 0, 0, 0.94);
 }
 
 @media only screen and (min-width: 930px) {
 
-    .feed .feedList .Imagens .UserPFP{
+    .feed .feedList .Imagens .UserPFP {
         display: block;
         position: absolute;
         top: 1vh;
@@ -16,13 +25,13 @@ body {
         border: 2px solid white;
         z-index: 1;
     }
-    
 
-    .feed .Imagens{
+
+    .feed .Imagens {
         display: block;
         position: relative;
         min-height: 20vh;
-        
+
         border: 3px solid rgb(255, 255, 255);
         border-radius: 20px;
         width: 78vw;
@@ -33,7 +42,7 @@ body {
         margin-right: 0;
     }
 
-    .feed .Imagens .postMessage{
+    .feed .Imagens .postMessage {
         display: block;
         border: 1.5px solid rgba(46, 46, 46, 0.676);
         text-align: left;
@@ -41,22 +50,22 @@ body {
         left: 4vw;
         max-width: 40vw;
         position: absolute;
-        
+
         color: white;
         font-size: 2vw;
         font-family: 'Roboto', sans-serif;
-        
+
         overflow: wrap;
-        
-        
-        
+
+
+
 
     }
 
-    .feed .postUser{
-        
+    .feed .postUser {
+
         position: absolute;
-        
+
         top: 2vh;
         left: 6vw;
         display: inline-table;
@@ -68,19 +77,19 @@ body {
 
     }
 
-    
 
-    
 
-    .feed .postImg_feed:hover{
+
+
+    .feed .postImg_feed:hover {
         transform: scale(1.5);
         transform-origin: top right;
         transition: 0.3s;
         z-index: 5;
     }
 
-    .feed .postImg_feed{
-        
+    .feed .postImg_feed {
+
         position: inherit;
         display: block;
         padding-left: 48vw;
@@ -89,13 +98,13 @@ body {
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
         z-index: 1;
-  
+
         padding-right: 3vw;
         overflow: hidden;
 
     }
 
-    .feed .feedList{
+    .feed .feedList {
 
         width: 40vw;
 
@@ -103,24 +112,25 @@ body {
 
     .feed {
 
-        
+
         display: block;
         position: absolute;
         left: 12vw;
         right: 0;
-        
+
         color: white;
         height: 100vh;
         max-width: 82vw;
         overflow: scroll;
         background-color: rgba(0, 0, 0, 0.86);
-
+        
     }
+
 }
 
 @media only screen and (max-width: 930px) {
 
-    .feed .feedList .Imagens .UserPFP{
+    .feed .feedList .Imagens .UserPFP {
         display: block;
         position: absolute;
         top: 1vh;
@@ -131,7 +141,7 @@ body {
         z-index: 1;
     }
 
-    .feed .Imagens{
+    .feed .Imagens {
         display: block;
         position: relative;
         min-height: 15vh;
@@ -146,7 +156,7 @@ body {
         margin-right: 0;
     }
 
-    .feed .Imagens .postMessage{
+    .feed .Imagens .postMessage {
         display: block;
         border: 1.5px solid rgba(46, 46, 46, 0.676);
         text-align: left;
@@ -154,22 +164,22 @@ body {
         left: 4vw;
         max-width: 60vw;
         position: absolute;
-        
+
         color: white;
         font-size: 2.5vw;
         font-family: 'Roboto', sans-serif;
-        
+
         overflow: wrap;
-        
-        
-        
+
+
+
 
     }
 
-    .feed .postUser{
-        
+    .feed .postUser {
+
         position: absolute;
-        
+
         top: 2vh;
         left: 7vw;
         display: inline-table;
@@ -181,39 +191,39 @@ body {
 
     }
 
-    
 
-    
 
-    .feed .postImg_feed:hover{
+
+
+    .feed .postImg_feed:hover {
         transform: scale(1.5);
         transform-origin: top right;
         transition: 0.3s;
         z-index: 5;
     }
 
-    .feed .postImg_feed{
-        
+    .feed .postImg_feed {
+
         position: inherit;
         display: block;
         padding-left: 66vw;
         z-index: 1;
         max-width: 30vw;
-        
-  
+
+
         padding-right: 3vw;
         overflow: hidden;
 
     }
 
-    .feed .feedList{
+    .feed .feedList {
 
 
         position: absolute;
-        
+
         left: 0;
         right: 0;
-        
+
 
     }
 
@@ -226,6 +236,6 @@ body {
         height: 79vh;
         width: 100vw;
         background-color: rgb(15, 14, 14);
-       
+
     }
 }
