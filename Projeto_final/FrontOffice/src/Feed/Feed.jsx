@@ -149,7 +149,7 @@ function Feed() {
                                         className="postImg_feed"
                                     />
                                     <p className="postMessage">{item.caption}</p>
-                                    <img src={foto} style={{width: "50px"}} alt="" />
+                                    <img className="UserPFP" src={foto} style={{width: "50px"}} alt="" />
                                     <p className="postUser">{userNAME}</p>
                                 </li>
                             );
