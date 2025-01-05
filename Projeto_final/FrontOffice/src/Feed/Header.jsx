@@ -20,10 +20,19 @@ function Header() {
     }, [username]);
 
     useEffect(() => {
+
         // Update the profile picture whenever allUsers or user_id changes
         if (allUsers.length > 0 && user_id) {
-                    if (proPicture) {
-                        setProfilePicture(proPicture); // Set the profile picture from the API
+                    let userCurrent = 0;
+                    for(let i=0;i<allUsers.length;i++){
+                        if(allUsers[i].id === Number(user_id)){
+                            userCurrent = allUsers[i]
+                            console.log(allUsers[i])
+                        }
+                    }
+                    console.log(userCurrent.profile_picture)
+                    if (userCurrent.profile_picture != null) {
+                        setProfilePicture(userCurrent.profile_picture); // Set the profile picture from the API
                     } else {
                         setProfilePicture(defaultProfilePicture); // Use default image if not available
                     }
