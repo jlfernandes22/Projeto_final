@@ -2,13 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { useNavigation } from "../NavigationContext";
 import "./editprofile.css";
 
-function EditProfile() {
+function EditProfile({ setProfilePicture }) {
     const { username, changeUsername, user_id } = useNavigation();
     const userSubmit = useRef("");
     const passSubmit = useRef("");
     const [newUser, setNewUser] = useState("");
     const [newPass, setNewPass] = useState("");
-    const [profilePicture, setProfilePicture] = useState(null); // State for holding profile image
+    const [profilePicture, setProfilePictureState] = useState(null); // Local state for holding profile image
     const fileInput = useRef(null);
 
     useEffect(() => {
@@ -25,7 +25,9 @@ function EditProfile() {
         if (file) {
             const reader = new FileReader();
             reader.onload = () => {
-                setProfilePicture(reader.result); // Set the uploaded image as the profile picture
+                const imageData = reader.result;
+                setProfilePictureState(imageData); // Update local state
+                setProfilePicture(imageData); // Update the profile picture in the parent (Profile)
             };
             reader.readAsDataURL(file);
         }
@@ -38,7 +40,7 @@ function EditProfile() {
                 id: user_id, 
                 name: newUsername, 
                 pass: newPassword, 
-                profile_picture: newProfilePic 
+                profile_picture: newProfilePic ? [`${newProfilePic}`] : null 
             };
     
             const options = {
@@ -50,26 +52,30 @@ function EditProfile() {
             };
     
             fetch('http://localhost/restapi/users.php', options)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    if (data.error) {
-                        console.error(data.error);
-                    } else {
-                        console.log("Profile Updated Successfully!");
-                        changeUsername(newUsername);
-                    }
-                })
-                .catch(error => {
-                    console.error('Fetch error:', error);
-                });
+            .then(async response => {
+                const text = await response.text(); // Get raw text response
+                //console.log('Raw response:', text);
+        
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+        
+                return JSON.parse(text); // Parse JSON if no error
+            })
+            .then(data => {
+                //console.log('Parsed response:', data);
+                if (data.error) {
+                    console.error('Server error:', data.error);
+                } else {
+                    //console.log('Profile Updated Successfully!');
+                    changeUsername(newUsername);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch error:', error);
+            });
         }
     }
-    
 
     const handleFileButton = () => {
         fileInput.current.click();
