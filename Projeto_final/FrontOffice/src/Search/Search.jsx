@@ -95,7 +95,7 @@ function Search() {
                 console.log(users[i].name)
                 console.log(users);
                 imgResultado.current.style.display = "block"
-                userAlvo.current.style.display = "block"
+                userAlvo.current.style.display = "block"                
                 resultado.current.textContent = `${users[i].name}`;
                 if(users[i].profile_picture == null){
                     setImgProfile(profileDefault);

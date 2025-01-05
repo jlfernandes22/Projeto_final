@@ -120,7 +120,7 @@ function Feed() {
 
     return (
         <div className="feed">
-            <ul>
+            <ul className="feedList">
                 {(() => {
                     let currentUserId = null;
     
@@ -140,7 +140,7 @@ function Feed() {
                                 <li key={index}>
                                     <img
                                         src={item.images[0]} // Assuming images is an array with at least one element
-                                        className="postImg"
+                                        className="postImg_feed"
                                         alt={`Post ${index}`}
                                     />
                                     <p className="postMessage">{item.caption}</p>

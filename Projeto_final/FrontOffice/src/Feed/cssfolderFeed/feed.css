@@ -6,9 +6,27 @@ body {
 
 @media only screen and (min-width: 930px) {
 
-    body{box-sizing: border-box;}
+    
+
+
+    .feed .postImg_feed{
+
+        position: absolute;
+        
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
+
+    .feed .feedList{
+
+        width: 40vw;
+
+    }
 
     .feed {
+
         box-sizing: border-box;
         display: block;
         position: absolute;
@@ -25,7 +43,22 @@ body {
 
 @media only screen and (max-width: 930px) {
 
-    
+    .feed .postImg_feed{
+
+        width: 40vw;
+
+    }
+
+    .feed .feedList{
+
+
+        position: absolute;
+        
+        left: 0;
+        right: 0;
+        margin: auto;
+
+    }
 
     .feed {
         z-index: -1;
@@ -33,7 +66,7 @@ body {
         display: block;
         position: fixed;
 
-        height: 100vh;
+        height: 79vh;
         width: 100vw;
         background-color: rgb(15, 14, 14);
        
