@@ -102,9 +102,9 @@ function EditProfile({ setProfilePicture }) {
                 onChange={(e) => setNewPass(e.target.value)} 
             />
             <p>Alterar Imagem</p>
-            <button onClick={handleFileButton}>Escolher Imagem</button>
+            <button className="ImageChooser" onClick={handleFileButton}>Escolher Imagem</button>
             {profilePictureState && <img src={profilePictureState} alt="Preview" className="profileImagePreview" />}
-            <button 
+            <button className="editButton"
                 style={{ display: "block", margin: "auto" }} 
                 onClick={() => changeUserName(user_id, newUser, newPass, profilePictureState)}
             >
