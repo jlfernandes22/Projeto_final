@@ -63,7 +63,7 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     pass VARCHAR(255) NOT NULL,
-    profile_picture TEXT,  -- To store the base64 string of the profile picture
+    profile_picture MEDIUMTEXT,  -- To store the base64 string of the profile picture
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
