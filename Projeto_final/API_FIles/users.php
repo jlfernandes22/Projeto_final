@@ -49,13 +49,13 @@ switch ($method) {
 function handleGet($pdo, $input)
 {
     if (!isset($input['id'])) {
-        // Select both id and name from users
-        $sql = "SELECT id, name,profile_picture FROM users";
+        // Select both id, name, and profile_picture from users
+        $sql = "SELECT id, name, profile_picture FROM users";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
     } else {
-        // Select id and all other columns for a specific user by id
-        $sql = "SELECT * FROM users WHERE id = :id";
+        // Select id, name, and profile_picture for a specific user by id
+        $sql = "SELECT id, name, profile_picture FROM users WHERE id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['id' => $input['id']]);
     }
@@ -89,11 +89,49 @@ function handlePost($pdo, $input)
 
 function handlePut($pdo, $input)
 {
-    $sql = "UPDATE users SET name = :name, pass = :pass WHERE id = :id";
+    // Check if the password is being updated
+    if (isset($input['pass']) && !empty($input['pass'])) {
+        // Hash the password before updating
+        $hashedPass = password_hash($input['pass'], PASSWORD_DEFAULT);
+        $input['pass'] = $hashedPass;
+    }
+
+    // Prepare the SQL query
+    $sql = "UPDATE users SET name = :name, pass = :pass";
+    $params = [
+        'name' => $input['name'],
+        'pass' => $input['pass'],
+        'id' => $input['id']
+    ];
+
+    // Check if there's a profile picture and handle it
+    if (isset($input['profile_picture']) && is_array($input['profile_picture'])) {
+        // Extract the first element of the array (the base64 string)
+        $profilePicture = $input['profile_picture'][0];
+
+        // Validate the base64 data format
+        if (preg_match('/^data:image\/[a-zA-Z]+;base64,/', $profilePicture)) {
+            // Store the base64 string directly (no need to JSON encode)
+            $params['profile_picture'] = $profilePicture;
+            $sql .= ", profile_picture = :profile_picture";
+        } else {
+            echo json_encode(['error' => 'Invalid profile picture format']);
+            return;
+        }
+    }
+
+    // Add the WHERE clause to the query
+    $sql .= " WHERE id = :id";
+    
+    // Execute the SQL query
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(['name' => $input['name'], 'pass' => $input['pass'], 'id' => $input['id']]);
+    $stmt->execute($params);
+
+    // Return success message
     echo json_encode(['message' => 'User updated successfully']);
 }
+
+
 
 function handleDelete($pdo, $input)
 {
