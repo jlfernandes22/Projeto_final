@@ -147,11 +147,15 @@ function Feed() {
                                     <img
                                         src={item.images[0]} // Assuming images is an array with at least one element
                                         className="postImg_feed"
-                                        alt={`Post ${index}`}
+                                        
                                     />
                                     <p className="postMessage">{item.caption}</p>
+<<<<<<< Updated upstream
                                     <img src={foto} style={{width: "50px"}} alt="" />
                                     <p className="postUser">Published by: {userNAME}</p>
+=======
+                                    <p className="postUser">{username}</p>
+>>>>>>> Stashed changes
                                 </li>
                             );
                         }
