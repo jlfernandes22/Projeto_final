@@ -137,7 +137,7 @@ function Feed() {
     
                             // Render the post with the username
                             return (
-                                <li key={index}>
+                                <li key={index} className="Imagens">
                                     <img
                                         src={item.images[0]} // Assuming images is an array with at least one element
                                         className="postImg_feed"
