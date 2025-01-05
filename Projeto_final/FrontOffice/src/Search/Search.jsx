@@ -91,11 +91,11 @@ function Search() {
         for(let i=0;i<users.length;i++){
             
             if(users[i].name == user){
+                console.log("entrou")
                 console.log(users[i].name)
                 console.log(users);
                 imgResultado.current.style.display = "block"
                 userAlvo.current.style.display = "block"
-                seguir.style.display = "block"
                 resultado.current.textContent = `${users[i].name}`;
                 if(users[i].profile_picture == null){
                     setImgProfile(profileDefault);

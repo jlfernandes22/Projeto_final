@@ -115,39 +115,42 @@ function Feed() {
             }
         });
 
-        console.log("Updated posts array:", aux);
         setAllPosts(aux); // Update allPosts with the formatted array
     }
 
     return (
         <div className="feed">
             <ul>
-            {(() => {
-          let currentUserId = null;
-
-          return allPosts.map((item, index) => {
-            if (typeof item === "number") {
-              // Update the current user ID
-              currentUserId = item;
-              return null; // Skip rendering user_id directly
-            }
-            if (typeof item === "object") {
-              // Render the post with the current user ID
-              return (
-                <li key={index}>
-                  <img
-                    src={item.images[0]} // Assuming images is an array with at least one element
-                    className="postImg"
-                    alt={`Post ${index}`}
-                  />
-                  <p className="postMessage">{item.caption}</p>
-                  <p className="postUser">Published by user ID: {currentUserId}</p>
-                </li>
-              );
-            }
-            return null; // Fallback in case of unexpected data types
-          });
-        })()}
+                {(() => {
+                    let currentUserId = null;
+    
+                    return allPosts.map((item, index) => {
+                        if (typeof item === "number") {
+                            // Update the current user ID
+                            currentUserId = item;
+                            return null; // Skip rendering the user ID directly
+                        }
+                        if (typeof item === "object") {
+                            // Find the user in the allUsers array
+                            const user = allUsers.find(user => user.id === currentUserId);
+                            const username = user ? user.name : `Unknown User (ID: ${currentUserId})`;
+    
+                            // Render the post with the username
+                            return (
+                                <li key={index}>
+                                    <img
+                                        src={item.images[0]} // Assuming images is an array with at least one element
+                                        className="postImg"
+                                        alt={`Post ${index}`}
+                                    />
+                                    <p className="postMessage">{item.caption}</p>
+                                    <p className="postUser">Published by: {username}</p>
+                                </li>
+                            );
+                        }
+                        return null; // Fallback for unexpected data types
+                    });
+                })()}
             </ul>
         </div>
     );
