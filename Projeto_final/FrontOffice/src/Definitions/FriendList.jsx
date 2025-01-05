@@ -119,7 +119,7 @@ function FriendList() {
             const profilePicture = user?.profile_picture || defaultProfilePicture;
 
             return (
-                <li key={index} className="Imagens">
+                <li key={index} className="FriendsList">
                     <img src={profilePicture} className="friends" alt="Profile" />
                     <p className="friendName">{userName}</p>
                 </li>
@@ -151,8 +151,8 @@ function FriendList() {
 
             {/* Render the selected list */}
             <ul className="friendList">
-                {view === "followed" && <p>A Seguir</p>}
-                {view === "followers" && <p>Seguidores</p>}
+                {view === "followed" && <p className="ASeguir">A Seguir</p>}
+                {view === "followers" && <p className="Seguidores">Seguidores</p>}
                 {view === "followed" && renderList(followed)}
                 {view === "followers" && renderList(followers)}
             </ul>
