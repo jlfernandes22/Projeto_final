@@ -5,12 +5,12 @@
 ## Features:
 - **Account Creation**: Users can create their accounts and log in.
 - **Post Sharing**: Users can share posts.
-- **Profile Management**: You can change your username, password and profile picture, you can see your posts, Followers and Following are being worked on.
-- **Chats**: Being Worked on
+- **Profile Management**: You can change your username, password and profile picture, you can see your posts, Followers and who's Following you.
+- **Chats**: NOT IMPLEMENTED
 
 ## Requirements:
 - **XAMPP**: You'll need XAMPP to set up a local server.
-- **Node.js**: Make sure Node.js is installed to run the back-end server.
+- **Node.js**: Make sure Node.js is installed.
 - **API Configuration**: Configure the provided API on your local machine to interact with the database and serve data.
 
 ## Installation:
