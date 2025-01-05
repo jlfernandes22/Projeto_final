@@ -65,7 +65,9 @@
     margin: 0;
 }
 .buttons button:hover{
-    background-color: rgba(255, 255, 255, 0.173);
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
 }
 .containerProfile .goToFeedImg{
     display: block;

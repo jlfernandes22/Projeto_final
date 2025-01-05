@@ -98,9 +98,18 @@
     margin: auto;
     width: 30vw;
     max-width: 215px;
+    border-radius: 1em;
+    border: 2px solid black;
     background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.5s;
     cursor: pointer;
-    transition: 0.3s;
+}
+
+.postpost:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
 }
 
 .chooseFile{
@@ -115,15 +124,18 @@
     bottom: 15vh;
     width: 30vw;
     max-width: 215px;
+    border-radius: 1em;
+    border: 2px solid black;
     background-color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: background-color 0.5s;
     cursor: pointer;
-    transition: 0.3s;
 }
+
 .chooseFile:hover{
-    background-color: darkgrey;
-}
-.postpost:hover{
-    background-color: darkgrey;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: white;
 }
 .backToFeedMenu{
     display: block;
