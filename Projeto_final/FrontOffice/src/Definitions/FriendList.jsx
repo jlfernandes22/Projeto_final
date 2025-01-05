@@ -5,9 +5,10 @@ import "./friendlist.css";
 function FriendList() {
     const [error, setError] = useState("");
     const [friends, setFriends] = useState([])
+    const [allUsers, setAllUsers] = useState();
 
     useEffect(() => {
-        getAllUsers()
+        getAllFollowed();
     }, [])
 
     useEffect(() => {
@@ -23,10 +24,10 @@ function FriendList() {
     }, [allUsers, user_id]);
 
 
-    function getAllFollowers(id) {
+    function getAllFollowed(id) {
         const jsonData = {id: Number(id)};
         const options = {
-            method: 'GET_FOLLOWERS',
+            method: 'GET_FOLLOWED',
             headers: {
                 'Content-Type': 'application/json',
             },
