@@ -76,7 +76,7 @@ function Content() {
         <div className="containerContent">
             <p className="criarPost">Criar Post</p>
             <div className="contentWrapper">
-                <textarea maxLength={350} placeholder="A escrever..." onChange={e => setCaptionPost(e.target.value)} className="submitText"></textarea>
+                <textarea maxLength={100} placeholder="A escrever..." onChange={e => setCaptionPost(e.target.value)} className="submitText"></textarea>
                 <div className={`imgPreview ${imageSrc ? "hasImage" : ""}`}>
                     {imageSrc ? (
                         <img
