@@ -1,10 +1,8 @@
 *{
     margin: 0;
 }
-body{
-    background-color: grey;
-}
 .profileName{
+    color: white;
     padding-top: 5px;
     text-align: center;
     font-size: 1.5em;
@@ -13,7 +11,7 @@ body{
     border-radius: 10px;
     max-width: 25vw;
     padding: 5px;
-    background-color: aquamarine;
+    background-color: rgb(0, 0, 0);
     margin: auto;
     word-wrap: break-word;
     word-break: break-word;
@@ -51,7 +49,7 @@ body{
     padding: 5px;
     border-radius: 1em;
     border: 2px solid black;
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     transition: background-color 0.5s;
     cursor: pointer;
@@ -65,7 +63,7 @@ body{
     margin: 0;
 }
 .buttons button:hover{
-    background-color: rgb(21, 141, 141);
+    background-color: rgba(255, 255, 255, 0.173);
 }
 .containerProfile .goToFeedImg{
     display: block;
@@ -74,11 +72,10 @@ body{
     cursor: pointer;
 }
 .containerProfile .escolhaCerta{
-    margin: auto;
-    width: 250px;
+    
+
+    width:100vw;
     visibility: hidden;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 5px solid black;
-    border-radius: 10px;
+    
+
 }

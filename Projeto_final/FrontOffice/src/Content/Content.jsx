@@ -91,7 +91,7 @@ function Content() {
             </div>
             <ul style={{ listStyle: "none" }}>
                 <li><button className="chooseFile" onClick={handleFileButton}>Adicionar Imagem</button></li>
-                <li><button className="chooseFile" onClick={() => createPost("create", user_id, captionPost, imageSrc)}>Publicar Post</button></li>
+                <li><button className="postpost" onClick={() => createPost("create", user_id, captionPost, imageSrc)}>Publicar Post</button></li>
                 <li><img className="backToFeedMenu" src={backMenu} alt="VoltarFeed" onClick={() => {
                     navigate("feed");
                     window.location.reload();

@@ -50,7 +50,7 @@ function ContentCreated() {
         <ul className="contentList">
 
             {allContent.map((post, index) => <li key={index}>
-                <img src={post.images} className="postImg" alt={`Post ${index}`} />
+                <img src={post.images} className="postImg"  />
                 <p className="postMessage">{post.caption}</p>
             </li>)}
         </ul>
