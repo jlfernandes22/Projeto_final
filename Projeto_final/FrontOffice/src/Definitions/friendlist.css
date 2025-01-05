@@ -13,8 +13,14 @@
     cursor: pointer;
 }
 .friendList{
+    position: absolute;
     list-style: none;
     background-color: grey;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 30vw;
+    border-radius: 20px;
 }
 .friendList li{
     padding: 5px;

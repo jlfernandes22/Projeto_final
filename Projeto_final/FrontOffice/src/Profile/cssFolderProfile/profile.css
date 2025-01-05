@@ -72,11 +72,10 @@
     cursor: pointer;
 }
 .containerProfile .escolhaCerta{
-    margin: auto;
-    width: 250px;
+    
+
+    width:100vw;
     visibility: hidden;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 5px solid black;
-    border-radius: 10px;
+    
+
 }

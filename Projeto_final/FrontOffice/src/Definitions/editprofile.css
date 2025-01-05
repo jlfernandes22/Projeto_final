@@ -1,6 +1,21 @@
 .containerEditProfile{
+    position: absolute;
     text-align: center;
+    width: 35vw;
+    max-width: 280px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: grey;
+    border-radius: 20px;
     padding: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.containerEditProfile input{
+    width: 80%;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid black;
 }

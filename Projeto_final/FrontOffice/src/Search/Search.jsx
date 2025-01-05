@@ -60,6 +60,7 @@ function Search() {
                 console.log(users);
                 imgResultado.current.style.display = "block"
                 userAlvo.current.style.display = "block"
+                seguir.style.display = "block"
                 resultado.current.textContent = `${users[i].name}`;
                 if(users[i].profile_picture == null){
                     setImgProfile(profileDefault);
@@ -105,7 +106,7 @@ function Search() {
             <div className="pesquisa" ref={userAlvo}>
                 <img ref={imgResultado} className="profileImage" src={imgProfile} alt="" />
                 <p className="pesquisaResultado" ref={resultado}></p>
-                <button>Seguir</button>
+                <button className="seguir">Seguir</button>
             </div>
         </div>
     );

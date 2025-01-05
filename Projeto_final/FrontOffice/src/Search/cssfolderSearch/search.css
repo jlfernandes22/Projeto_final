@@ -1,6 +1,6 @@
 
 body {
-    background-color:rgb(50, 50, 50);
+    background-color:rgb(0, 0, 0);
 }
 
 .containerSearch {
@@ -42,7 +42,7 @@ body {
     margin: 5px;
 }
 .containerSearch .pesquisa{
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     height: auto;
