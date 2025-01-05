@@ -1,68 +1,162 @@
 import React, { useState, useEffect } from "react";
-import { imgArray } from "../Messages/ImgArray";
 import "./friendlist.css";
+import { useNavigation } from "../NavigationContext";
+import defaultProfilePicture from "./anonymity.png";
 
 function FriendList() {
+    const { user_id } = useNavigation();
     const [error, setError] = useState("");
-    const [friends, setFriends] = useState([])
-    const [allUsers, setAllUsers] = useState();
+    const [followed, setFollowed] = useState([]);
+    const [followers, setFollowers] = useState([]);
+    const [allUsers, setAllUsers] = useState([]);
+    const [view, setView] = useState("followed"); // State to toggle between followed and followers
 
     useEffect(() => {
-        getAllFollowed();
-    }, [])
+        getAllFollowed(user_id);
+        getAllFollowers(user_id);
+        getAllUsers();
+    }, [user_id]);
 
     useEffect(() => {
-        // Update the profile picture whenever allUsers or user_id changes
-        if (allUsers.length > 0 && user_id) {
-            if (proPicture) {
-                setProfilePicture(proPicture); // Set the profile picture from the API
-            } else {
-                setProfilePicture(defaultProfilePicture); // Use default image if not available
-            }
+        console.log("All Users:", allUsers);
+        console.log("Followed:", followed);
+        console.log("Followers:", followers);
+    }, [allUsers, followed, followers]);
 
-        }
-    }, [allUsers, user_id]);
-
-
-    function getAllFollowed(id) {
-        const jsonData = {id: Number(id)};
+    function getAllUsers() {
         const options = {
-            method: 'GET_FOLLOWED',
+            method: "GET",
             headers: {
-                'Content-Type': 'application/json',
+                "Content-Type": "application/json",
             },
-            body: JSON.stringify(jsonData),
         };
 
-        fetch('http://localhost/restapi/users.php', options)
-            .then(response => {
+        fetch("http://localhost/restapi/users.php", options)
+            .then((response) => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error("Network response was not ok");
                 }
                 return response.json();
             })
-            .then(data => {
+            .then((data) => {
                 if (data.error) {
                     setError(data.error);
                 } else {
                     setError("");
-                    setFriends(data);
+                    setAllUsers(data);
                 }
             })
-            .catch(error => {
-                console.error('Fetch error:', error);
+            .catch((error) => {
+                console.error("Fetch error:", error);
             });
     }
 
+    function getAllFollowed(id) {
+        const jsonData = { user_id: Number(id) };
+        const options = {
+            method: "GET_FOLLOWED",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(jsonData),
+        };
+
+        fetch("http://localhost/restapi/users.php", options)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.error) {
+                    setError(data.error);
+                } else {
+                    setError("");
+                    setFollowed(data);
+                }
+            })
+            .catch((error) => {
+                console.error("Fetch error:", error);
+            });
+    }
+
+    function getAllFollowers(id) {
+        const jsonData = { user_id: Number(id) };
+        const options = {
+            method: "GET_FOLLOWERS",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(jsonData),
+        };
+
+        fetch("http://localhost/restapi/users.php", options)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                if (data.error) {
+                    setError(data.error);
+                } else {
+                    setError("");
+                    setFollowers(data);
+                }
+            })
+            .catch((error) => {
+                console.error("Fetch error:", error);
+            });
+    }
+
+    // Function to render the list (either followed or followers)
+    function renderList(list) {
+        return list.map((item, index) => {
+            const user = allUsers.find((user) => user.id === item.id);
+            const userName = user ? user.name : `Unknown User (ID: ${item.id})`;
+            const profilePicture = user?.profile_picture || defaultProfilePicture;
+
+            return (
+                <li key={index} className="Imagens">
+                    <img src={profilePicture} className="friends" alt="Profile" />
+                    <p className="friendName">{userName}</p>
+                </li>
+            );
+        });
+    }
+
+    if (!allUsers.length || (!followed.length && !followers.length)) {
+        return <p>Loading friends...</p>;
+    }
 
     return (
-        <ul className="friendList">
+        <div>
+            {/* Toggle buttons */}
+            <div className="toggleButtons">
+                <button
+                    className={view === "followed" ? "active" : ""}
+                    onClick={() => setView("followed")}
+                >
+                    A Seguir
+                </button>
+                <button
+                    className={view === "followers" ? "active" : ""}
+                    onClick={() => setView("followers")}
+                >
+                    Seguidores
+                </button>
+            </div>
 
-            {friends.map((friend, index) => <li key={index}>
-                <img src={friend.profile_picture} className="friends" alt={`User ${index}`} />
-                <p className="friendName">Usuiasjdiasj {index}</p>
-            </li>)}
-        </ul>
+            {/* Render the selected list */}
+            <ul className="friendList">
+                {view === "followed" && <p>A Seguir</p>}
+                {view === "followers" && <p>Seguidores</p>}
+                {view === "followed" && renderList(followed)}
+                {view === "followers" && renderList(followers)}
+            </ul>
+        </div>
     );
 }
 
